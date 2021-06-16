@@ -1,11 +1,11 @@
 module.exports = {
-    name: 'hug',
-    description: "give a hug",
+    name: 'headpat',
+    description: "give a headpat",
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#f1f48b')
-        .setImage('https://i.imgur.com/8RynXDI.gif')
+        .setImage('https://i.imgur.com/bWi3l4Y.mp4')
 
         message.channel.send(newEmbed);
-    }  
+    }
 }

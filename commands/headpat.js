@@ -3,7 +3,7 @@ module.exports = {
     description: "give a headpat",
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()
-        .setColor('#f1c40f')
+        .setColor('#f1f48b')
         .setImage('https://i.imgur.com/FnZWRUQ.gif')
 
         message.channel.send(newEmbed);

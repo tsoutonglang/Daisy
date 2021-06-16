@@ -27,12 +27,78 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     // commands
+
+    // reaction commands
     if(command === 'headpat'){
         client.commands.get('headpat').execute(message, args, Discord);
     }
 
     else if (command == 'hug'){
         client.commands.get('hug').execute(message, args, Discord);
+    }
+
+    else if (command == 'kick'){
+        client.commands.get('kick').execute(message, args, Discord);
+    }
+
+    else if (command == 'blush'){
+        client.commands.get('blush').execute(message, args, Discord);
+    }
+
+    else if (command == 'celebrate'){
+        client.commands.get('celebrate').execute(message, args, Discord);
+    }
+
+    else if (command == 'cheer'){
+        client.commands.get('cheer').execute(message, args, Discord);
+    }
+
+    else if (command == 'confused'){
+        client.commands.get('confused').execute(message, args, Discord);
+    }
+
+    else if (command == 'cry'){
+        client.commands.get('cry').execute(message, args, Discord);
+    }
+
+    else if (command == 'cry'){
+        client.commands.get('cry').execute(message, args, Discord);
+    }
+
+    else if (command == 'comfort'){
+        client.commands.get('comfort').execute(message, args, Discord);
+    }
+
+    else if (command == 'dance'){
+        client.commands.get('dance').execute(message, args, Discord);
+    }
+
+    else if (command == 'kiss'){
+        client.commands.get('kiss').execute(message, args, Discord);
+    }
+
+    else if (command == 'punch'){
+        client.commands.get('punch').execute(message, args, Discord);
+    }
+
+    else if (command == 'sleep'){
+        client.commands.get('sleep').execute(message, args, Discord);
+    }
+
+    else if (command == 'smack'){
+        client.commands.get('smack').execute(message, args, Discord);
+    }
+
+    else if (command == 'tackle'){
+        client.commands.get('tackle').execute(message, args, Discord);
+    }
+
+    else if (command == 'toss'){
+        client.commands.get('toss').execute(message, args, Discord);
+    }
+
+    else if (command == 'yeet'){
+        client.commands.get('yeet').execute(message, args, Discord);
     }
 });
 

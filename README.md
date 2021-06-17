@@ -6,7 +6,7 @@
   <li>initial creation of bot</li>
   <li>initial command goals in order of working on it:</li>
   <ol>
-    <li>eli/mio bot commands (hug, kiss, yeet, etc.)</li>
+    <li>eli/mio bot commands (hug, kiss, yeet, etc.) [completed]</li>
     <li>starboard</li>
     <li>reaction roles</li>
   </ol>

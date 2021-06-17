@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#f1f48b')
-        .setImage('https://i.imgur.com/FnZWRUQ.gif')
+        .setImage('https://i.imgur.com/EuwymaD.gif')
 
         message.channel.send(newEmbed);
     }

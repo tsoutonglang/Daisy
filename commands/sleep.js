@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'headpat',
-    description: "give a headpat",
+    name: 'sleep',
+    description: "go to sleep",
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#f1f48b')

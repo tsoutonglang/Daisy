@@ -1,10 +1,10 @@
 module.exports = {
-    name: 'headpat',
-    description: "give a headpat",
+    name: 'smack',
+    description: "smack a bish",
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#f1f48b')
-        .setImage('https://i.imgur.com/SG3AVK9.mp4')
+        .setImage('https://i.imgur.com/4h5uMFD.gif')
 
         message.channel.send(newEmbed);
     }

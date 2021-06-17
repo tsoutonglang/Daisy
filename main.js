@@ -61,10 +61,6 @@ client.on('message', message => {
         client.commands.get('cry').execute(message, args, Discord);
     }
 
-    else if (command == 'cry'){
-        client.commands.get('cry').execute(message, args, Discord);
-    }
-
     else if (command == 'comfort'){
         client.commands.get('comfort').execute(message, args, Discord);
     }

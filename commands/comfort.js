@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'headpat',
+    name: 'comfort',
     description: "give a headpat",
     execute(message, args, Discord){
         const newEmbed = new Discord.MessageEmbed()

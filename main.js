@@ -28,8 +28,13 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/); // with prefix
     const command = args.shift().toLowerCase();
 
+    // help
+    if(command === 'help'){
+        client.commands.get('help').execute(message, args, Discord);
+    }
+
     // reaction commands
-    if(command === 'headpat'){
+    else if(command === 'headpat'){
         client.commands.get('headpat').execute(message, args, Discord);
     } else if (command == 'hug'){
         client.commands.get('hug').execute(message, args, Discord);
@@ -63,9 +68,9 @@ client.on('message', message => {
         client.commands.get('toss').execute(message, args, Discord);
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, args, Discord);
-    }
+    } 
 
-    // reaction roles
+    // reaction role
     else if (command === 'reactionrole'){
         client.commands.get('reactionrole').execute(message, args, Discord, client);
     }

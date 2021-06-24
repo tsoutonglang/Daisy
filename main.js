@@ -20,6 +20,21 @@ for (const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
+client.on('guildMemberAdd', guildMember => {
+    let welcomeRole = guildMember.guild.roles.cache.get('744230534456017029');
+    console.log('User ' + guildMember.user.tag + 'has joined');
+
+    guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('738312747250614333').send(`<@${guildMember.user.id}> has landed!`);
+});
+
+client.on('guildMemberRemove', guildMember => {
+    let welcomeRole = guildMember.guild.roles.cache.get('744230534456017029');
+    console.log('User ' + guildMember.user.tag + 'has left');
+    
+    guildMember.guild.channels.cache.get('738312747250614333').send(`${guildMember.user.tag} got dusted!`);
+});
+
 // commands
 client.on('message', message => {
     // check if command started with prefix
@@ -77,21 +92,27 @@ client.on('message', message => {
 });
 
 // starboard
-/* client.on('messageReactionAdd', async (reaction, user) => {
- *   // check if reaction emoji is correct
- *   if (reaction.emoji.name === '💕'){
- *       console.log('Someone reacted');
- *
- *       // check num of reactions on message
- *       if (reaction.message.partial){
- *           const fetchedMsg = await reaction.message.fetch(); 
- *       }
- *
- *       else{
- *           
- *       }
- *   }  
- * });
- */
+client.on('messageReactionAdd', async (reaction, user) => {
+    // check if reaction emoji is correct
+    if (reaction.emoji.name === '💕'){
+        // create starboard message
+       if (reaction.message.partial){
+           const starboard = client.channels.cache.get('857183207992852508');
+           const fetchedMsg = await reaction.message.fetch();
+           const sbEmbed = new Discord.MessageEmbed()
+           .setColor('#f1f48b')
+           .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
+           .setDescription(`[Jump to message](${fetchedMsg.url})\n\n` + fetchedMsg.content)
+           // .setImage(fetchedMsg.url)
+           .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
+           if (starboard) {
+               starboard.send(sbEmbed);
+           }
+       }
+       else{
+           return
+       }
+   }  
+});
 
 client.login('NzM4MTc5MTYxOTYwNjExOTYw.XyII6g.S0CuwsEMZL_W3QjkQQ-wpRSoy9s'); // allows bot to be connected

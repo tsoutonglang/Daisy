@@ -21,18 +21,11 @@ for (const file of commandFiles){
 }
 
 client.on('guildMemberAdd', guildMember => {
-    let welcomeRole = guildMember.guild.roles.cache.get('744230534456017029');
-    console.log('User ' + guildMember.user.tag + 'has joined');
-
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('738312747250614333').send(`<@${guildMember.user.id}> has landed!`);
+    client.commands.get('welcome').execute(guildMember, Discord);
 });
 
 client.on('guildMemberRemove', guildMember => {
-    let welcomeRole = guildMember.guild.roles.cache.get('744230534456017029');
-    console.log('User ' + guildMember.user.tag + 'has left');
-    
-    guildMember.guild.channels.cache.get('738312747250614333').send(`${guildMember.user.tag} got dusted!`);
+    client.commands.get('exit').execute(guildMember, Discord);
 });
 
 // commands
@@ -93,26 +86,119 @@ client.on('message', message => {
 
 // starboard
 client.on('messageReactionAdd', async (reaction, user) => {
-    // check if reaction emoji is correct
+    const starboard = client.channels.cache.get('854967695455289344'); // channel
+    
     if (reaction.emoji.name === '💕'){
-        // create starboard message
-       if (reaction.message.partial){
-           const starboard = client.channels.cache.get('857183207992852508');
-           const fetchedMsg = await reaction.message.fetch();
-           const sbEmbed = new Discord.MessageEmbed()
-           .setColor('#f1f48b')
-           .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
-           .setDescription(`[Jump to message](${fetchedMsg.url})\n\n` + fetchedMsg.content)
-           // .setImage(fetchedMsg.url)
-           .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
-           if (starboard) {
-               starboard.send(sbEmbed);
-           }
-       }
-       else{
-           return
-       }
-   }  
+        const handleStarboard = async ()=> {
+            const msgs = await starboard.messages.fetch({ limit: 100 });
+            const fetchedMsg = reaction.message;
+            const image = fetchedMsg.attachments.size > 0 ? fetchedMsg.attachments.first().url : '';
+
+            const existingMsg = msgs.find(msg =>
+                msg.embeds.length === 1 ?
+                (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
+                
+            if (existingMsg) {
+                const embed = new Discord.MessageEmbed()
+                    .setColor('#f1f48b')
+                    .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
+                    .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
+                    .setDescription(fetchedMsg.cleanContent)
+                    .addFields(
+                        { name: '**Author**', value : `<@${fetchedMsg.author.id}>`, inline: true},
+                        { name: '**Channel**', value : `${fetchedMsg.channel}`, inline: true},
+                        { name: '**Original**', value : `[Message](${fetchedMsg.url})`},
+                    )
+                    .setImage(image);
+
+                existingMsg.edit(`${reaction.count} - 💕`, embed);
+            } else{
+                // send embed
+                const embed = new Discord.MessageEmbed()
+                    .setColor('#f1f48b')
+                    .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
+                    .setDescription(fetchedMsg.cleanContent)
+                    .addFields(
+                        { name: '**Author**', value : `<@${fetchedMsg.author.id}>`, inline: true},
+                        { name: '**Channel**', value : `${fetchedMsg.channel}`, inline: true},
+                        { name: '**Original**', value : `[Message](${fetchedMsg.url})`},
+                    )
+                    .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
+                    .setImage(image);
+                
+                if(starboard)
+                    starboard.send(`${reaction.count} - 💕`, embed);
+            }
+        }
+
+        // checks if channel was starboard
+        if (reaction.message.channel === starboard)
+            return;
+        
+        // if there's correct number of reactions
+        if (reaction.message.partial){
+            await reaction.fetch();
+            await reaction.message.fetch()
+            if (reaction.count >= 2)
+                handleStarboard();
+        } else
+            handleStarboard();
+    }
+});
+
+client.on('messageReactionRemove', async (reaction, user) => {
+    const starboard = client.channels.cache.get('854967695455289344'); // channel
+
+    const handleStarboard = async ()=> {
+        const msgs = await starboard.messages.fetch({ limit: 100 });
+        const fetchedMsg = reaction.message;
+        const image = fetchedMsg.attachments.size > 0 ? fetchedMsg.attachments.first().url : '';
+        const existingMsg = msgs.find(msg =>
+            msg.embeds.length === 1 ?
+            (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
+        
+        if (existingMsg) {
+            const embed = new Discord.MessageEmbed()
+                .setColor('#f1f48b')
+                .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
+                .setDescription(fetchedMsg.cleanContent)
+                .addFields(
+                    { name: '**Author**', value : `<@${fetchedMsg.author.id}>`, inline: true},
+                    { name: '**Channel**', value : `${fetchedMsg.channel}`, inline: true},
+                    { name: '**Original**', value : `[Message](${fetchedMsg.url})`},
+                )
+                .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
+                .setImage(image);
+
+            existingMsg.edit(`${reaction.count} - 💕`, embed);
+        } else {
+            const embed = new Discord.MessageEmbed()
+                .setColor('#f1f48b')
+                .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
+                .setDescription(fetchedMsg.cleanContent)
+                .addFields(
+                    { name: '**Author**', value : `<@${fetchedMsg.author.id}>`, inline: true},
+                    { name: '**Channel**', value : `${fetchedMsg.channel}`, inline: true},
+                    { name: '**Original**', value : `[Message](${fetchedMsg.url})`},
+                )
+                .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
+                .setImage(image);
+
+            if (starboard)
+                starboard.send(`${reaction.count} - 💕`, embed);
+        }
+    }
+
+    if (reaction.message.channel === starboard)
+        return;
+    
+        if (reaction.message.partial) {
+            await reaction.fetch();
+            await reaction.message.fetch();
+            handleStarboard();
+        }
+        else
+            handleStarboard();
 });
 
 client.login('NzM4MTc5MTYxOTYwNjExOTYw.XyII6g.S0CuwsEMZL_W3QjkQQ-wpRSoy9s'); // allows bot to be connected

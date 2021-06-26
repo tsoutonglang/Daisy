@@ -3,7 +3,7 @@ module.exports = {
     description: "welcome people into the server",
     execute(guildMember, Discord){
         const channel = guildMember.guild.channels.cache.get('738306568675786803');
-        const baebeeRole = guildMember.guild.roles.cache.get('738601010116689953');
+        const unverifiedRole = guildMember.guild.roles.cache.get('857733794626142238');
         const divider1Role =  guildMember.guild.roles.cache.get('853867187998687242');
         const divider2Role =  guildMember.guild.roles.cache.get('853867433366650950');
 
@@ -17,7 +17,7 @@ module.exports = {
             .setImage('https://i.imgur.com/GlY3T6m.png')
             .setFooter("Please enjoy your stay!", "https://i.imgur.com/PmRwT69.png");
 
-        guildMember.roles.add(baebeeRole);
+        guildMember.roles.add(unverifiedRole);
         guildMember.roles.add(divider1Role);
         guildMember.roles.add(divider2Role);
         channel.send(`Welcome <@${guildMember.user.id}>!\n`, {embed: welcomeMsg});

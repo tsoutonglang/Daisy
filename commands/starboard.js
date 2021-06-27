@@ -3,7 +3,7 @@ module.exports = {
     description: "to immortalize your failures",
     async execute(reaction, user, Discord, client){
         
-        const starboard = client.channels.cache.get('858422996893302785'); // channel
+        const starboard = client.channels.cache.get('767519393554628618'); // channel
         const handleStarboard = async ()=> {
             const msgs = await starboard.messages.fetch({ limit: 100 });
             const fetchedMsg = reaction.message;
@@ -25,7 +25,7 @@ module.exports = {
                     .setFooter(fetchedMsg.id + ' | ' + new Date(fetchedMsg.createdTimestamp).toLocaleString())
                     .setImage(image);
 
-                existingMsg.edit(`${reaction.count} - 💕`, embed);
+                existingMsg.edit(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
             } else {
                 const embed = new Discord.MessageEmbed()
                     .setColor('#f1f48b')
@@ -40,7 +40,7 @@ module.exports = {
                     .setImage(image);
 
                 if (starboard)
-                    starboard.send(`${reaction.count} - 💕`, embed);
+                    starboard.send(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
             }
         }
 
@@ -50,7 +50,8 @@ module.exports = {
             if (reaction.message.partial) {
                 await reaction.fetch();
                 await reaction.message.fetch();
-                handleStarboard();
+                if (reaction.count >= 3)
+                    handleStarboard();
             }
             else
                 handleStarboard();

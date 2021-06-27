@@ -58,8 +58,8 @@ client.on('message', message => {
         client.commands.get('confused').execute(message, args, Discord);
     } else if (command == 'cry'){
         client.commands.get('cry').execute(message, args, Discord);
-    } else if (command == 'comfort'){
-        client.commands.get('comfort').execute(message, args, Discord);
+    } else if (command == 'cuddle'){
+        client.commands.get('cuddle').execute(message, args, Discord);
     } else if (command == 'dance'){
         client.commands.get('dance').execute(message, args, Discord);
     } else if (command == 'kiss'){
@@ -83,14 +83,15 @@ client.on('message', message => {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
     }
 
+    // rules channel
     else if (command === 'rules'){
-        
+        client.commands.get('rules').execute(message, args);
     }
 });
 
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
-    if (reaction.emoji.name === '💕'){
+    if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
         client.commands.get('starboard').execute(reaction, user, Discord, client);
     }
 
@@ -102,7 +103,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 client.on('messageReactionRemove', async (reaction, user) => {
     // starboard
-    if (reaction.emoji.name === '💕'){
+    if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
         client.commands.get('starboard').execute(reaction, user, Discord, client);
     }
 });

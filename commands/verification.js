@@ -2,7 +2,7 @@ module.exports = {
     name: 'verification',
     description: "verify or get yeeted",
     async execute(reaction, user, client){
-        const verifyChnl = client.channels.cache.get('858424907150393344');
+        const verifyChnl = client.channels.cache.get('858424513238532149');
 
         if (reaction.message.channel === verifyChnl) {    
             // roles        

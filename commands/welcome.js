@@ -3,7 +3,7 @@ module.exports = {
     description: "welcome people into the server",
     execute(guildMember, Discord){
         const channel = guildMember.guild.channels.cache.get('738306568675786803');
-        const unverifiedRole = guildMember.guild.roles.cache.get('857733794626142238');
+        const unverifiedRole = guildMember.guild.roles.cache.get('856596232175484929');
         const divider1Role =  guildMember.guild.roles.cache.get('853867187998687242');
         const divider2Role =  guildMember.guild.roles.cache.get('853867433366650950');
 

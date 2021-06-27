@@ -1,11 +1,11 @@
 module.exports = {
     name: 'yeet',
     description: "yeet a bish",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/u9EqLdq.gif')
             .setDescription(`**${authorMember}** yeeted someone`)
 

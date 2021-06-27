@@ -1,11 +1,11 @@
 module.exports = {
     name: 'cuddle',
     description: "cuddle someone",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/BnQNkax.gif')
             .setDescription(`**${authorMember}** wants cuddles`)
         

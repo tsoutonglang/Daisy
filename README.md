@@ -4,11 +4,19 @@
 <h3>June 27, 2021</h3>
   <p>
     <ul>
-      <li>added a command for the rules channel</li>
-      <li>edited the rules
-      <li>added mentions to reaction commands</li>
-      <li>changed messages to reaction commands</li>
-      <li>added images to certain commands that require 2 people</li>
+      <li>added general embed color variable</li>
+      <li>created banners and dividers for rules and roles channels</li>
+      <li>rules</li>
+        <ul>
+          <li>added a command to print all the rules</li>
+          <li>edited + updated
+        </ul>
+      <li>reaction commands</li>
+        <ul>
+          <li>added mentions</li>
+          <li>changed messages to reaction commands</li>
+          <li>added images to certain commands that require 2 people</li>
+        </ul>
     </ul>
   </p>
 

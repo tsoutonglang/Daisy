@@ -1,11 +1,11 @@
 module.exports = {
     name: 'toss',
     description: "toss your enemies",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/u23AfOc.gif')
             .setDescription(`**${authorMember}** tossed someone`);
 

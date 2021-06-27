@@ -1,7 +1,7 @@
 module.exports = {
     name: 'starboard',
     description: "to immortalize your failures",
-    async execute(reaction, user, Discord, client){
+    async execute(reaction, user, Discord, client, embedColor){
         
         const starboard = client.channels.cache.get('767519393554628618'); // channel
         const handleStarboard = async ()=> {
@@ -14,7 +14,7 @@ module.exports = {
             
             if (existingMsg) {
                 const embed = new Discord.MessageEmbed()
-                    .setColor('#f1f48b')
+                    .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
                     .setDescription(fetchedMsg.cleanContent)
                     .addFields(
@@ -28,7 +28,7 @@ module.exports = {
                 existingMsg.edit(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
             } else {
                 const embed = new Discord.MessageEmbed()
-                    .setColor('#f1f48b')
+                    .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
                     .setDescription(fetchedMsg.cleanContent)
                     .addFields(

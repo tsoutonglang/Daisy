@@ -1,11 +1,11 @@
 module.exports = {
     name: 'tackle',
     description: "tackle your friends",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/3tTNoKu.gif')
             .setDescription(`**${authorMember}** tackled someone`);
 

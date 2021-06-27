@@ -20,8 +20,10 @@ for (const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
+const embedColor = '#f1f48b';
+
 client.on('guildMemberAdd', guildMember => {
-    client.commands.get('welcome').execute(guildMember, Discord);
+    client.commands.get('welcome').execute(guildMember, Discord, embedColor);
 });
 
 client.on('guildMemberRemove', guildMember => {
@@ -38,49 +40,49 @@ client.on('message', message => {
 
     // help
     if(command === 'help'){
-        client.commands.get('help').execute(message, args, Discord);
+        client.commands.get('help').execute(message, args, Discord, embedColor);
     }
 
     // reaction commands
     else if(command === 'headpat'){
-        client.commands.get('headpat').execute(message, args, Discord);
+        client.commands.get('headpat').execute(message, args, Discord, embedColor);
     } else if (command == 'hug'){
-        client.commands.get('hug').execute(message, args, Discord);
+        client.commands.get('hug').execute(message, args, Discord, embedColor);
     } else if (command == 'kick'){
-        client.commands.get('kick').execute(message, args, Discord);
+        client.commands.get('kick').execute(message, args, Discord, embedColor);
     } else if (command == 'blush'){
-        client.commands.get('blush').execute(message, args, Discord);
+        client.commands.get('blush').execute(message, args, Discord, embedColor);
     } else if (command == 'celebrate'){
-        client.commands.get('celebrate').execute(message, args, Discord);
+        client.commands.get('celebrate').execute(message, args, Discord, embedColor);
     } else if (command == 'cheer'){
-        client.commands.get('cheer').execute(message, args, Discord);
+        client.commands.get('cheer').execute(message, args, Discord, embedColor);
     } else if (command == 'confused'){
-        client.commands.get('confused').execute(message, args, Discord);
+        client.commands.get('confused').execute(message, args, Discord, embedColor);
     } else if (command == 'cry'){
-        client.commands.get('cry').execute(message, args, Discord);
+        client.commands.get('cry').execute(message, args, Discord, embedColor);
     } else if (command == 'cuddle'){
-        client.commands.get('cuddle').execute(message, args, Discord);
+        client.commands.get('cuddle').execute(message, args, Discord, embedColor);
     } else if (command == 'dance'){
-        client.commands.get('dance').execute(message, args, Discord);
+        client.commands.get('dance').execute(message, args, Discord, embedColor);
     } else if (command == 'kiss'){
-        client.commands.get('kiss').execute(message, args, Discord);
+        client.commands.get('kiss').execute(message, args, Discord, embedColor);
     } else if (command == 'punch'){
-        client.commands.get('punch').execute(message, args, Discord);
+        client.commands.get('punch').execute(message, args, Discord, embedColor);
     } else if (command == 'sleep'){
-        client.commands.get('sleep').execute(message, args, Discord);
+        client.commands.get('sleep').execute(message, args, Discord, embedColor);
     } else if (command == 'smack'){
-        client.commands.get('smack').execute(message, args, Discord);
+        client.commands.get('smack').execute(message, args, Discord, embedColor);
     } else if (command == 'tackle'){
-        client.commands.get('tackle').execute(message, args, Discord);
+        client.commands.get('tackle').execute(message, args, Discord, embedColor);
     } else if (command == 'toss'){
-        client.commands.get('toss').execute(message, args, Discord);
+        client.commands.get('toss').execute(message, args, Discord, embedColor);
     } else if (command == 'yeet'){
-        client.commands.get('yeet').execute(message, args, Discord);
+        client.commands.get('yeet').execute(message, args, Discord, embedColor);
     } 
 
     // reaction role
     else if (command === 'reactionrole'){
-        client.commands.get('reactionrole').execute(message, args, Discord, client);
+        client.commands.get('reactionrole').execute(message, args, Discord, client, embedColor);
     }
 
     // rules channel
@@ -92,7 +94,7 @@ client.on('message', message => {
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
     if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
-        client.commands.get('starboard').execute(reaction, user, Discord, client);
+        client.commands.get('starboard').execute(reaction, user, Discord, client, embedColor);
     }
 
     // verification
@@ -104,7 +106,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 client.on('messageReactionRemove', async (reaction, user) => {
     // starboard
     if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
-        client.commands.get('starboard').execute(reaction, user, Discord, client);
+        client.commands.get('starboard').execute(reaction, user, Discord, client, embedColor);
     }
 });
 

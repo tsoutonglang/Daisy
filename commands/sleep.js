@@ -1,11 +1,11 @@
 module.exports = {
     name: 'sleep',
     description: "go to sleep",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/DAYqWuN.gif')
             .setDescription(`**${authorMember}** says go to sleep`);
 

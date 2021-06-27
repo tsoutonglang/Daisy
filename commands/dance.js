@@ -1,11 +1,11 @@
 module.exports = {
     name: 'dance',
     description: "dance party!!!",
-    execute(message, args, Discord){
+    execute(message, args, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setImage('https://i.imgur.com/iS7V8SN.gif')
             .setDescription(`**${authorMember}** is dancing!`)
 

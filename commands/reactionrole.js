@@ -1,8 +1,15 @@
 module.exports = {
     name: 'reactionrole',
     description: "sets up a reaction role message",
-    async execute (message, args, Discord, client){
+    async execute (message, args, Discord, client, embedColor){
         const channel = '738288684725436516'; // baebee role channel
+        const banner = 'https://i.imgur.com/XEGY8gr.png';
+
+        let bannerEmbed = new Discord.MessageEmbed()
+            .setImage(banner)
+            .setColor(embedColor);
+
+        message.channel.send(bannerEmbed);
         
         // color
         // emojis
@@ -32,7 +39,7 @@ module.exports = {
         const onigiriRole = message.guild.roles.cache.get('739409316947427338');
 
         let colorEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setDescription('<a:starPink:855377867994562581>  <:alphaC:855367523809886238><:alphaO:855369784929157120><:alphaL:855367523880534066><:alphaO:855369784929157120><:alphaR:855369784955109376><:alphaS:855369784911593502>  <a:starPink:855377867994562581>\n\n'
                 + '˚₊✩‧₊ ━━━━━━━━━━━━━━━ ₊‧✩₊˚\n\n'
                 + `<:dstrawberry:855715140778328064>  <@&739408971374526544>\n`
@@ -187,7 +194,7 @@ module.exports = {
 
         // creates embed message
         let pronounEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setDescription('<a:starBlue:855378665634004992>  <:alphaP:855369784806735903><:alphaR:855369784955109376><:alphaO:855369784929157120><:alphaN:855369784920506388><:alphaO:855369784929157120><:alphaU:855369784602787841><:alphaN:855369784920506388><:alphaS:855369784911593502>  <a:starBlue:855378665634004992>\n\n'
                 + '˚₊✩‧₊ ━━━━━━━━━━━━━━━ ₊‧✩₊˚\n\n'
                 + `<a:heartRed:856448642347696138>  <@&738286665755263017>\n`
@@ -318,7 +325,7 @@ module.exports = {
         const writingRole = message.guild.roles.cache.get('841298619675705374');
 
         let pingEmbed = new Discord.MessageEmbed()
-            .setColor('#f1f48b')
+            .setColor(embedColor)
             .setDescription('<a:starYellow:855378665709502514>  <:alphaP:855369784806735903><:alphaI:855367523821944842><:alphaN:855369784920506388><:alphaG:855367523884728320><:alphaS:855369784911593502>  <a:starYellow:855378665709502514>\n\n'
                 + '˚₊✩‧₊ ━━━━━━━━━━━━━━━ ₊‧✩₊˚\n\n'
                 + `<a:astarPurplePink:855715166427545600>  <@&741776504089739274>\n`

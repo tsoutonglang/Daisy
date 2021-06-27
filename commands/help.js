@@ -1,9 +1,9 @@
 module.exports = {
     name: 'help',
     description: "sets up a reaction role message",
-    execute (message, args, Discord){
+    execute (message, args, Discord, embedColor){
         const newEmbed = new Discord.MessageEmbed()
-        .setColor('#f1f48b')
+        .setColor(embedColor)
         .setTitle("Need some help?")
         .setDescription("The prefix for this bot is \`d.\`\n"
             + "Any questions or suggestions can be sent to <@399586594329460737> or in <#738264467275776110> <a:hearts:784316489523134485>\n\n"

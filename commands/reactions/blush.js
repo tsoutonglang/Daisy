@@ -1,7 +1,7 @@
 module.exports = {
     name: 'blush',
     description: "start blushing",
-    execute(message, args, Discord, embedColor){
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()

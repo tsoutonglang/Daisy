@@ -1,7 +1,7 @@
 module.exports = {
     name: 'help',
     description: "sets up a reaction role message",
-    execute (message, args, Discord, embedColor){
+    execute (message, Discord, embedColor){
         const newEmbed = new Discord.MessageEmbed()
         .setColor(embedColor)
         .setTitle("Need some help?")

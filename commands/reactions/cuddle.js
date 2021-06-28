@@ -1,7 +1,7 @@
 module.exports = {
     name: 'cuddle',
     description: "cuddle someone",
-    execute(message, args, Discord, embedColor){
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()

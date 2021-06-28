@@ -1,18 +1,18 @@
 module.exports = {
-    name: 'yeet',
-    description: "yeet a bish",
-    execute(message, args, Discord, embedColor){
+    name: 'punch',
+    description: "punch a bish",
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
             .setColor(embedColor)
-            .setImage('https://i.imgur.com/u9EqLdq.gif')
-            .setDescription(`**${authorMember}** yeeted someone`)
+            .setImage('https://i.imgur.com/zmjyMj3.gif')
+            .setDescription(`**${authorMember}** punched someone`)
 
         if (message.mentions.members.first()){
             let targetMember = message.mentions.members.first().displayName;
 
-            newEmbed.setDescription(`**${authorMember}** yeeted** **${targetMember}**`)
+            newEmbed.setDescription(`**${authorMember}** punched **${targetMember}**`)
         }
 
         message.channel.send(newEmbed);

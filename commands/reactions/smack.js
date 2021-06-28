@@ -1,18 +1,18 @@
 module.exports = {
-    name: 'sleep',
-    description: "go to sleep",
-    execute(message, args, Discord, embedColor){
+    name: 'smack',
+    description: "smack a bish",
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
             .setColor(embedColor)
-            .setImage('https://i.imgur.com/DAYqWuN.gif')
-            .setDescription(`**${authorMember}** says go to sleep`);
+            .setImage('https://i.imgur.com/4h5uMFD.gif')
+            .setDescription(`**${authorMember}** smacked someone`);
 
         if (message.mentions.members.first()){
             let targetMember = message.mentions.members.first().displayName;
 
-            newEmbed.setDescription(`**${authorMember}** is telling **${targetMember}** to go to sleep`)
+            newEmbed.setDescription(`**${authorMember}** smacked **${targetMember}**`)
         }
 
         message.channel.send(newEmbed);

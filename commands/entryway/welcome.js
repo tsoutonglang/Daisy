@@ -9,17 +9,17 @@ module.exports = {
 
         const welcomeMsg = new Discord.MessageEmbed()
             .setColor(embedColor)
-            .setTitle("Welcome to Anime & Artists! <a:bee:858626567608729651>")
+            .setTitle("Welcome to Anime & Artists!")
             .setThumbnail('https://i.imgur.com/qilLXH7.gif')
-            .setDescription("<a:astarPurple:855715167048695818> Read through <#738303555458433117> for access to the rest of the server\n"
-                + "<a:astarPurple:855715167048695818> Introduce yourself in <#738248600345116734>\n"
-                + "<a:astarPurple:855715167048695818> Get some roles in <#738288684725436516>")
+            .setDescription("<a:sideheart:858626585184043018> Read through <#738303555458433117> for access to the rest of the server\n"
+                + "<a:sideheart:858626585184043018> Introduce yourself in <#738248600345116734>\n"
+                + "<a:sideheart:858626585184043018> Get some roles in <#738288684725436516>")
             .setImage('https://i.imgur.com/QQMo7bH.png')
             .setFooter("Please enjoy your stay!", "https://i.imgur.com/PmRwT69.png");
 
         guildMember.roles.add(unverifiedRole);
         guildMember.roles.add(divider1Role);
         guildMember.roles.add(divider2Role);
-        channel.send(`Welcome <@${guildMember.user.id}>!\n`, {embed: welcomeMsg});
+        channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
     }
 }

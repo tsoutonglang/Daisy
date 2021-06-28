@@ -1,12 +1,12 @@
 module.exports = {
     name: 'kiss',
     description: "give a kiss",
-    execute(message, args, Discord, embedColor){
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
         
         const newEmbed = new Discord.MessageEmbed()
             .setColor(embedColor)
-            .setDescription(`${authorMember} wants a kiss`)
+            .setDescription(`**${authorMember}** wants a kiss`)
             .setImage('https://i.imgur.com/Kh55TLR.gif');
 
         if (message.mentions.members.first()){

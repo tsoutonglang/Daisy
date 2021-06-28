@@ -1,18 +1,18 @@
 module.exports = {
-    name: 'dance',
-    description: "dance party!!!",
-    execute(message, args, Discord, embedColor){
+    name: 'yeet',
+    description: "yeet a bish",
+    execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;
 
         const newEmbed = new Discord.MessageEmbed()
             .setColor(embedColor)
-            .setImage('https://i.imgur.com/iS7V8SN.gif')
-            .setDescription(`**${authorMember}** is dancing!`)
+            .setImage('https://i.imgur.com/u9EqLdq.gif')
+            .setDescription(`**${authorMember}** yeeted someone`)
 
         if (message.mentions.members.first()){
             let targetMember = message.mentions.members.first().displayName;
 
-            newEmbed.setDescription(`**${authorMember}** is dancing with **${targetMember}**`);
+            newEmbed.setDescription(`**${authorMember}** yeeted** **${targetMember}**`)
         }
 
         message.channel.send(newEmbed);

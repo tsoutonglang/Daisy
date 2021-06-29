@@ -27,6 +27,7 @@ module.exports = {
                 + `**If you understand our rules, please react to the 🐝 below !**`;
 
             message.channel.send(banner);
+            message.channel.send(divider);
             message.channel.send(ruleS1);
             message.channel.send(ruleS2);
             message.channel.send(divider);

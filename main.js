@@ -27,7 +27,6 @@ function readFiles(dir) {
         return files;
     }, []);
 }
-
 client.commands = new Discord.Collection();
 const commandFiles = readFiles("commands").filter(file => file.endsWith('.js'));
 for (const file of commandFiles){
@@ -101,6 +100,11 @@ client.on('message', message => {
     // rules channel
     else if (command === 'rules'){
         client.commands.get('rules').execute(message);
+    }
+
+    // rules channel
+    else if (command === 'information'){
+        client.commands.get('information').execute(message);
     }
 });
 

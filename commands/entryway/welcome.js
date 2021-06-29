@@ -14,7 +14,7 @@ module.exports = {
             .setDescription("<a:sideheart:858626585184043018> Read through <#738303555458433117> for access to the rest of the server\n"
                 + "<a:sideheart:858626585184043018> Introduce yourself in <#738248600345116734>\n"
                 + "<a:sideheart:858626585184043018> Get some roles in <#738288684725436516>")
-            .setImage('https://i.imgur.com/QQMo7bH.png')
+            .setImage('https://i.imgur.com/BmOzDpk.png')
             .setFooter("Please enjoy your stay!", "https://i.imgur.com/PmRwT69.png");
 
         guildMember.roles.add(unverifiedRole);

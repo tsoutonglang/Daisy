@@ -3,7 +3,16 @@
 <h2>Change Log</h2>
 <h3>June 29, 2021</h3>
   <p>
-    <ul>Created information page with server staff + invite link</ul>
+    <ul>
+      <li>Updating help command</li>
+      <li>created clear messages, kick user, and ban user commands</li>
+    </ul>
+  </p>
+<h3>June 29, 2021</h3>
+  <p>
+    <ul>
+      <li>Created information page with server staff + invite link</li>
+    </ul>
   </p>
 <h3>June 28, 2021</h3>
   <p>

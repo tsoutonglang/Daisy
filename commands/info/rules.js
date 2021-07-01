@@ -41,7 +41,7 @@ module.exports = {
             message.channel.send(divider);
             message.channel.send(final);
         } else {
-            message.channel.send('You don\'t have permission to use this command');
+            message.reply('you don\'t have permission to use this command');
         }
     }
 }

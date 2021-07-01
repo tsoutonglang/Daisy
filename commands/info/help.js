@@ -5,25 +5,26 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor(embedColor)
         .setTitle("Need some help?")
-        .setDescription("The prefix for this bot is \`d.\`\n"
-            + "Any questions or suggestions can be sent to <@399586594329460737> or in <#738264467275776110> <a:hearts:784316489523134485>\n\n"
-            + "<a:starPink:855377867994562581> **REACTIONS** <a:starPink:855377867994562581>\n"
-            + "**blush**: UwU\n"
-            + "**celebrate**: Celebration time!\n"
-            + "**cheer**: Motivation!\n"
-            + "**comfort**: Cheer up baby\n"
-            + "**confused**: Nani the fuck?\n"
-            + "**cry**: Cry your heart out\n"
-            + "**dance**: Dancing queen, only seventeen\n"
-            + "**headpat**: Headpats\n"
-            + "**hug**: Hugs!\n"
-            + "**kick**: RIP\n"
-            + "**kiss**: Kiss kiss goodbye\n"
-            + "**punch**: RIP\n"
-            + "**sleep**: Go to sleep!\n"
-            + "**smack**: Smack a bitch\n"
-            + "**tackle**: Tackle\n"
-            + "**yeet**: This bitch empty, YEET!\n\n")
+        .addFields(
+            {name: "<a:sideheart:858626585184043018> **FAQ** <a:sideheart2:859315436179816508>", value: "The prefix for this bot is \`d.\`\nAny questions or suggestions can be sent to <@399586594329460737> or in <#738264467275776110> <:dlatte:855715427451273226>\n\n"},
+            {name: "<a:sideheart:858626585184043018> **REACTIONS** <a:sideheart2:859315436179816508>", value: "**blush**: UwU\n"
+                + "**celebrate**: Celebration time!\n"
+                + "**cheer**: Motivation!\n"
+                + "**comfort**: Cheer up baby\n"
+                + "**confused**: Nani the fuck?\n"
+                + "**cry**: Cry your heart out\n"
+                + "**dance**: Dancing queen, only seventeen\n"
+                + "**headpat**: Headpats\n"
+                + "**hug**: Hugs!\n"
+                + "**kiss**: Kiss kiss goodbye\n"
+                + "**punch**: RIP\n"
+                + "**sleep**: Go to sleep!\n"
+                + "**smack**: Smack a bitch\n"
+                + "**tackle**: Tackle\n"
+                + "**yeet**: This bitch empty, YEET!\n\n"},
+            {name: "<a:sideheart:858626585184043018> **MODERATION** <a:sideheart2:859315436179816508>", value: "**clear**: the extermination process\n"}
+
+        )
         .setFooter("Daisy belongs to Anime & Artists and won't be shared to other servers")
 
         message.channel.send(newEmbed);

@@ -60,8 +60,6 @@ client.on('message', message => {
         client.commands.get('headpat').execute(message, Discord, embedColor);
     } else if (command == 'hug'){
         client.commands.get('hug').execute(message, Discord, embedColor);
-    } else if (command == 'kick'){
-        client.commands.get('kick').execute(message, Discord, embedColor);
     } else if (command == 'blush'){
         client.commands.get('blush').execute(message, Discord, embedColor);
     } else if (command == 'celebrate'){
@@ -90,21 +88,26 @@ client.on('message', message => {
         client.commands.get('toss').execute(message, Discord, embedColor);
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, Discord, embedColor);
-    } 
+    } //else if (command == 'kick'){
+        //client.commands.get('kick').execute(message, Discord, embedColor);
+    //}
 
-    // reaction role
+    // channels
     else if (command === 'reactionrole'){
         client.commands.get('reactionrole').execute(message, Discord, client, embedColor);
-    }
-
-    // rules channel
-    else if (command === 'rules'){
+    } else if (command == 'rules'){
         client.commands.get('rules').execute(message);
+    } else if (command == 'information'){
+        client.commands.get('information').execute(message);
     }
 
-    // rules channel
-    else if (command === 'information'){
-        client.commands.get('information').execute(message);
+    // moderation
+    else if (command === 'clear'){
+        client.commands.get('clear').execute(message, args);
+    } else if (command === 'kick'){
+        client.commands.get('kick').execute(message, Discord, embedColor);
+    } else if (command === 'ban'){
+        client.commands.get('ban').execute(message, Discord, embedColor);
     }
 });
 

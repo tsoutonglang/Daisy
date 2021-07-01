@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'kick',
+    name: 'kick123',
     description: "give a kick",
     execute(message, Discord, embedColor){
         let authorMember = message.member.displayName;

@@ -6,7 +6,7 @@ module.exports = {
         .setColor(embedColor)
         .setTitle("Need some help?")
         .addFields(
-            {name: "<a:sideheart:858626585184043018> **FAQ** <a:sideheart2:859315436179816508>", value: "The prefix for this bot is \`d.\`\nAny questions or suggestions can be sent to <@399586594329460737> or in <#738264467275776110> <:dlatte:855715427451273226>\n\n"},
+            {name: "<a:sideheart:858626585184043018> **FAQ** <a:sideheart2:859315436179816508>", value: "The prefix for this bot is \`d.\`\nAny questions or suggestions can be sent to <@399586594329460737> or in <#738264467275776110> <:dlatte:855715427451273226>"},
             {name: "<a:sideheart:858626585184043018> **REACTIONS** <a:sideheart2:859315436179816508>", value: "**blush**: UwU\n"
                 + "**celebrate**: Celebration time!\n"
                 + "**cheer**: Motivation!\n"
@@ -21,8 +21,11 @@ module.exports = {
                 + "**sleep**: Go to sleep!\n"
                 + "**smack**: Smack a bitch\n"
                 + "**tackle**: Tackle\n"
-                + "**yeet**: This bitch empty, YEET!\n\n"},
-            {name: "<a:sideheart:858626585184043018> **MODERATION** <a:sideheart2:859315436179816508>", value: "**clear**: the extermination process\n"}
+                + "**yeet**: This bitch empty, YEET!"},
+            {name: "<a:sideheart:858626585184043018> **MODERATION** <a:sideheart2:859315436179816508>", value: "*for admin and mod usage only*\n"
+                + "**ban**: ban someone from the server\n"
+                + "**clear**: clear up to 100 messages\n"
+                + "**kick**: kick a member from the server"}
 
         )
         .setFooter("Daisy belongs to Anime & Artists and won't be shared to other servers")

@@ -1,12 +1,12 @@
 module.exports = {
     name: 'bannedWords',
     description: "thou shall not speak these words",
-    execute(message, Discord, client, embedColor) {
-    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded'];
+    execute(message, Discord, client, embedColor, ms) {
+    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'banana'];
         if (message.channel.type === 'dm' || message.author.bot)
             return;
         
-        const logChannel = client.channels.cache.find(channel => channel.id === '858954963899383808')
+        const logChannel = client.channels.cache.get('858954963899383808')
         let foundInText = false;
         for (var i in bannedWords){
             if (message.content.toLowerCase().includes(bannedWords[i].toLowerCase()))
@@ -26,41 +26,31 @@ module.exports = {
 
             const warning1 = message.guild.roles.cache.get('858956889295552533');
             const warning2 = message.guild.roles.cache.get('858962059168317461');
-            const mute = message.guild.roles.cache.get('858962002626084904');
+            const muteRole = message.guild.roles.cache.get('858962002626084904');
+            const target = message.member;
 
-            if (message.member.roles.cache.has(warning2)){
-                console.log("yeet");
-                let kickEmbed = new Discord.MessageEmbed()
-                    .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved your third warning and you'll be kicked in one minute :3`)
-                    .setColor(embedColor);
-                message.channel.send(kickEmbed);
-                message.delete();
-                // kick member
-            } else if (message.member.roles.cache.has(warning1)) {
-                console.log("run");
-                let warn2Embed = new Discord.MessageEmbed()
-                    .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved your second warning and will be muted for 3 minutes.`)
-                    .setColor(embedColor);
-                message.channel.send(warn2Embed);
-                message.delete();
-                message.member.roles.add(warning2);
-                message.member.roles.add(mute);
-                setTimeout(async () => {
-                    message.member.roles.remove(mute);
-                }, 180000);
-            } else {
-                console.log("boss");
-                let warn1Embed = new Discord.MessageEmbed()
-                    .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved your first warning and will be muted for 3 minutes.`)
-                    .setColor(embedColor);
-                message.channel.send(warn1Embed);
-                message.delete();
-                message.member.roles.add(warning1);
-                message.member.roles.add(mute);
-                setTimeout(async () => {
-                    message.member.roles.remove(mute);
-                }, 180000);
+            let warnEmbed = new Discord.MessageEmbed()
+                .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved a warning and will be muted for 3 minutes.`)
+                .setColor(embedColor);
+
+            function mute(member) {
+                member.roles.add(muteRole);
+                
+                setTimeout(function () {
+                    memberTarget.roles.remove(muteRole);
+                }, ms("3m"));
             }
+
+            function warningSystem(member) {
+                // figure out
+                return;
+            }
+            
+            message.channel.send(warnEmbed);
+            message.member.roles.add(warning1);
+            mute(target);
+            warningSystem(target);
+            message.delete();
         }
     }
 }

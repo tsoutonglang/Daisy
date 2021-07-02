@@ -22,7 +22,7 @@ module.exports = {
                 + `・*No mini-modding*: Don't act as a mod, just mention one of the staff that's online.\n`
                 + `・Don’t bend the rules, nitpick the wordings, or try to manipulate the system.\n`
                 + `・__You can get far by using common sense.__\n\n`
-            let warnings = `**Warnings**\nVerbal warning\nWarning 1: Loss in voice chat and outside emoji privileges\nWarning 2: Loss in image privileges\nWarning 3: Kick or ban\n・This warning system is subject to change based on certain rules and regulations.\n・Verbal warnings are for situations that are on thin ice. Anything that goes against our guidelines is an immediate warning.\n・If you feel like our actions are unjustified, you can dm one of the staff members to appeal your case to us.\n・One warning will be taken off 2 weeks after getting it.\n\n`
+            let warnings = `**Warnings**\nVerbal warning or mute\nWarning 1: Loss in voice chat and outside emoji privileges\nWarning 2: Loss in image privileges\nWarning 3: Kick or ban\n・This warning system is subject to change based on certain rules and regulations.\n・Verbal warnings and mutes are for situations that are on thin ice. Anything that goes against our guidelines is an immediate warning.\n・If you feel like our actions are unjustified, you can dm one of the staff members to appeal your case to us.\n・One warning will be taken off 2 weeks after getting it.\n\n`
             let final = `**__*We hold the right to modify the rules whenever we want.*__**\n\n`
                 + `**If you understand our rules, please react to the 🐝 below !**`;
 

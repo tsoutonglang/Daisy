@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const ms = require('ms');
 
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
@@ -8,10 +9,6 @@ const embedColor = '#f1f48b'; // color for any embeds
 // to get into other js files
 const path = require('path');
 const fs = require('fs');
-
-client.once('ready', () => {
-    console.log('Daisy is online');
-});
 
 // go into commands folders
 function readFiles(dir) {
@@ -27,12 +24,18 @@ function readFiles(dir) {
         return files;
     }, []);
 }
+
 client.commands = new Discord.Collection();
 const commandFiles = readFiles("commands").filter(file => file.endsWith('.js'));
+
 for (const file of commandFiles){
     const command = require(path.join(__dirname, file));
     client.commands.set(command.name, command);
 }
+
+client.once('ready', () => {
+    console.log('Daisy is online');
+});
 
 client.on('guildMemberAdd', guildMember => {
     client.commands.get('welcome').execute(guildMember, Discord, embedColor);
@@ -88,9 +91,7 @@ client.on('message', message => {
         client.commands.get('toss').execute(message, Discord, embedColor);
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, Discord, embedColor);
-    } //else if (command == 'kick'){
-        //client.commands.get('kick').execute(message, Discord, embedColor);
-    //}
+    }
 
     // channels
     else if (command === 'reactionrole'){
@@ -108,12 +109,16 @@ client.on('message', message => {
         client.commands.get('kick').execute(message, Discord, embedColor);
     } else if (command === 'ban'){
         client.commands.get('ban').execute(message, Discord, embedColor);
+    } else if (command == 'mute'){
+        client.commands.get('mute').execute(message, args, Discord, embedColor, ms);
+    } else if (command == 'warn'){
+        client.commands.get('warn').execute(message, args, Discord, embedColor, ms, client);
     }
 });
 
 // word filter
 client.on('message', async message =>{
-    client.commands.get('bannedWords').execute(message, Discord, client, embedColor);
+    client.commands.get('bannedWords').execute(message, Discord, client, embedColor, ms);
 });
 
 client.on('messageReactionAdd', async (reaction, user) => {  

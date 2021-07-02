@@ -29,7 +29,7 @@ module.exports = {
                 });
             }
         } else {
-            message.reply('you don\'t have permission to use this command')
+            message.reply('you don\'t have permission to use this command');
         }
     }
 }

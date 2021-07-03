@@ -2,7 +2,7 @@ module.exports = {
     name: 'bannedWords',
     description: "thou shall not speak these words",
     execute(message, Discord, client, embedColor, ms) {
-    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'banana'];
+    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'dyke', 'tranny', 'banana'];
         if (message.channel.type === 'dm' || message.author.bot)
             return;
         
@@ -31,23 +31,39 @@ module.exports = {
 
             let warnEmbed = new Discord.MessageEmbed()
                 .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved a warning and will be muted for 3 minutes.`)
-                .setColor(embedColor);
+                .setColor(embedColor)
+                .setTimestamp();
 
             function mute(member) {
                 member.roles.add(muteRole);
                 
                 setTimeout(function () {
-                    memberTarget.roles.remove(muteRole);
+                    member.roles.remove(muteRole);
                 }, ms("3m"));
             }
 
             function warningSystem(member) {
-                // figure out
-                return;
+                // has 2 warnings already
+                if (member.roles.cache.has('858962059168317461')) {
+                    warnEmbed.setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved your third warning and will be kicked in 30 seconds.`)
+                    setTimeout(function () {
+                        member.kick();
+                    }, ms("30s"));
+                }
+
+                // has 1 warning already
+                else if (member.roles.cache.has('858956889295552533')) {
+                    message.channel.send(warnEmbed);
+                    member.roles.add(warning2);
+                }
+
+                // had no warnings
+                else {
+                    message.channel.send(warnEmbed);
+                    member.roles.add(warning1);
+                }
             }
-            
-            message.channel.send(warnEmbed);
-            message.member.roles.add(warning1);
+
             mute(target);
             warningSystem(target);
             message.delete();

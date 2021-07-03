@@ -106,13 +106,13 @@ client.on('message', message => {
     else if (command === 'clear'){
         client.commands.get('clear').execute(message, args);
     } else if (command === 'kick'){
-        client.commands.get('kick').execute(message, Discord, embedColor);
+        client.commands.get('kick').execute(message, Discord, embedColor, args);
     } else if (command === 'ban'){
-        client.commands.get('ban').execute(message, Discord, embedColor);
+        client.commands.get('ban').execute(message, Discord, embedColor, args);
     } else if (command == 'mute'){
         client.commands.get('mute').execute(message, args, Discord, embedColor, ms);
     } else if (command == 'warn'){
-        client.commands.get('warn').execute(message, args, Discord, embedColor, ms, client);
+        client.commands.get('warn').execute(message, args, Discord, embedColor, ms);
     }
 });
 

@@ -19,7 +19,6 @@ module.exports = {
 
             if (args[0] < 100) {
                 const count = parseInt(args[0]) + 1;
-                console.log("clearing " + count + " messages");
                 await message.channel.messages.fetch({ limit : count}).then(messages => {
                     message.channel.bulkDelete(messages);
                 });
@@ -29,7 +28,7 @@ module.exports = {
                 });
             }
         } else {
-            message.reply('you don\'t have permission to use this command');
+            message.reply('you don\'t have permission to use this command.');
         }
     }
 }

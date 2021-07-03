@@ -45,6 +45,7 @@ module.exports = {
             message.channel.send(invite);
             message.channel.send(divider);
             message.channel.send(inviteImg);
+            message.delete();
         } else {
             message.reply("you don\'t have permission to use this command.")
         }

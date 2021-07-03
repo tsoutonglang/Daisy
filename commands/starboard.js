@@ -2,8 +2,8 @@ module.exports = {
     name: 'starboard',
     description: "to immortalize your failures",
     async execute(reaction, Discord, client, embedColor){
-        
         const starboard = client.channels.cache.get('767519393554628618'); // channel
+       
         const handleStarboard = async ()=> {
             const msgs = await starboard.messages.fetch({ limit: 100 });
             const fetchedMsg = reaction.message;

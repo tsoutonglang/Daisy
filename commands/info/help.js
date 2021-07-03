@@ -26,11 +26,11 @@ module.exports = {
                 + "**ban**: ban someone from the server\n"
                 + "**clear**: clear up to 100 messages\n"
                 + "**kick**: kick a member from the server\n"
+                + "**lock**: lock the server down during raids\n"
                 + "**mute**: mute someone for a certain amount of time or indefinitely\n"
                 + "**warn**: give a member a warning"}
-
         )
-        .setFooter("Daisy belongs to Anime & Artists and won't be shared to other servers")
+        .setFooter("Daisy belongs to Anime & Artists and won't be shared to other servers.")
 
         message.channel.send(newEmbed);
     }

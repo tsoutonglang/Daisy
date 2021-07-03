@@ -40,8 +40,9 @@ module.exports = {
             message.channel.send(warnings);
             message.channel.send(divider);
             message.channel.send(final);
+            message.delete();
         } else {
-            message.reply('you don\'t have permission to use this command');
+            message.reply('you don\'t have permission to use this command.');
         }
     }
 }

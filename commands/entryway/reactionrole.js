@@ -418,7 +418,8 @@ module.exports = {
                 } else {
                     return;
                 }
-            });
+            })
+            message.delete();
         } else {
             message.reply('you don\'t have permission to use this command');
         }

@@ -47,13 +47,13 @@ module.exports = {
         if (reaction.message.channel === starboard)
             return;
         
-            if (reaction.message.partial) {
-                await reaction.fetch();
-                await reaction.message.fetch();
-                if (reaction.count >= 3)
-                    handleStarboard();
-            }
-            else
+        if (reaction.message.partial) {
+            await reaction.fetch();
+            await reaction.message.fetch();
+            if (reaction.count >= 3)
                 handleStarboard();
+        }
+        else
+            handleStarboard();
     }
 }

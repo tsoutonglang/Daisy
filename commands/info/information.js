@@ -26,7 +26,8 @@ module.exports = {
                 + '<a:luckyHorseshoe:859302252312920074>・<#738288684725436516>・Get some roles here\n'
                 + '<a:luckyHeart:859302252334153728>・<#738263635964592191>・Keep up with the server announcements!\n'
                 + '<a:luckyFlower:859302252409520138>・<#767519393554628618>・Our starboard. Posts with 3 or more <:hyena_laugh:738261600003424387> reactions get posted here.\n'
-                + '<a:luckyDiamond:859302252326289428>・<#738264467275776110>・Any questions or suggestions you want to see in the server should go in here.'
+                + '<a:luckyDiamond:859302252326289428>・<#738264467275776110>・Any questions or suggestions you want to see in the server should go in here.\n'
+                + '<a:luckyClover:859302252338741268>・<#762171939522740224>・For a general overview of when our staff is active!'
 
             message.channel.send(banner);
             message.channel.send(divider);

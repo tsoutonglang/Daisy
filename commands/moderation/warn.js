@@ -28,6 +28,8 @@ module.exports = {
                     if (member.roles.cache.has('858962059168317461')) {
                         warnEmbed.setDescription(`This is <@${member.id}>'s third warning, kicking member in 30 seconds.`)
                         message.channel.send(warnEmbed);
+                        const muteRole = message.guild.roles.cache.get('858962002626084904');
+                        member.roles.add(muteRole);
                         setTimeout(function () {
                             member.kick();
                         }, ms("30s"));

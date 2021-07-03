@@ -22,8 +22,7 @@ module.exports = {
                 + "**smack**: Smack a bitch\n"
                 + "**tackle**: Tackle\n"
                 + "**yeet**: This bitch empty, YEET!"},
-            {name: "<a:sideheart:858626585184043018> **MISC** <a:sideheart2:859315436179816508>", value: "**help**: the screen you're looking at 🤡\n"
-                + "**snipe**: get those receipts"},
+            {name: "<a:sideheart:858626585184043018> **MISC** <a:sideheart2:859315436179816508>", value: "**help**: the screen you're looking at 🤡\n"},
             {name: "<a:sideheart:858626585184043018> **MODERATION** <a:sideheart2:859315436179816508>", value: "*for admin and mod usage only*\n"
                 + "**ban**: ban someone from the server\n"
                 + "**clear**: clear up to 100 messages\n"

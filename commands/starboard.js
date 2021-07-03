@@ -13,7 +13,6 @@ module.exports = {
                 (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
             
             if (existingMsg) {
-                console.log("yeet");
                 const embed = new Discord.MessageEmbed()
                     .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
@@ -28,7 +27,7 @@ module.exports = {
 
                 existingMsg.edit(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
             } else {
-                console.log("ruff");
+                console.log("message added to starboard");
                 const embed = new Discord.MessageEmbed()
                     .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())

@@ -7,7 +7,7 @@
       <li>Finished warning system - ended up not using the database and will have admins/mods be responsible for taking off warnings</li>
       <li>Added punctuation to moderation sentences</li>
       <li>Added 2 words to the banned words list</li>
-      <li>Looking into how to lock server channels during raids</li>
+      <li>Added lockdown server command</li>
       <li>Looking into how to run bot 24/7</li>
     </ul>
   </p>

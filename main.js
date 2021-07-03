@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const {Collection} = require("discord.js");
 const ms = require('ms');
 
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
@@ -33,6 +34,8 @@ for (const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
+client.snipes = new Collection();
+
 client.once('ready', () => {
     console.log('Daisy is online');
 });
@@ -55,7 +58,7 @@ client.on('message', message => {
 
     // help
     if(command === 'help'){
-        client.commands.get('help').execute(message,Discord, embedColor);
+        client.commands.get('help').execute(message, Discord, embedColor);
     }
 
     // reaction commands
@@ -113,6 +116,8 @@ client.on('message', message => {
         client.commands.get('mute').execute(message, args, Discord, embedColor, ms);
     } else if (command == 'warn'){
         client.commands.get('warn').execute(message, args, Discord, embedColor, ms);
+    } else if (command == 'lockdown'){
+        client.commands.get('lockdown').execute(message, args);
     }
 });
 
@@ -123,7 +128,7 @@ client.on('message', async message =>{
 
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
-    if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
+    if (reaction.emoji.name === '💕'){
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
     }
 

@@ -20,10 +20,12 @@ module.exports = {
             if (args[0] < 100) {
                 const count = parseInt(args[0]) + 1;
                 await message.channel.messages.fetch({ limit : count}).then(messages => {
+                    console.log("Deleted " + args[0] + " messages.");
                     message.channel.bulkDelete(messages);
                 });
             } else {
                 await message.channel.messages.fetch({ limit : args[0] }).then(messages => {
+                    console.log("Deleted " + args[0] + " messages.");
                     message.channel.bulkDelete(messages);
                 });
             }

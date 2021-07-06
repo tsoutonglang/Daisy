@@ -2,12 +2,12 @@ module.exports = {
     name: 'warn',
     description: 'mutes member from talking',
     execute(message, args, Discord, embedColor, ms){
-        if (message.member.roles.cache.has('858950608933355530') || message.member.roles.cache.has('858950631736606720')){
+        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const target = message.mentions.members.first();
             
             if (target) {
-                const warning1 = message.guild.roles.cache.get('858956889295552533');
-                const warning2 = message.guild.roles.cache.get('858962059168317461');
+                const warning1 = message.guild.roles.cache.get('763407901456203856');
+                const warning2 = message.guild.roles.cache.get('763408119005970472');
                 const logChannel = message.guild.channels.cache.get('858954963899383808');
                 var reason = " ";
 
@@ -25,7 +25,7 @@ module.exports = {
 
                 function warningSystem(member) {
                     // has 2 warnings already
-                    if (member.roles.cache.has('858962059168317461')) {
+                    if (member.roles.cache.has('763408119005970472')) {
                         warnEmbed.setDescription(`This is <@${member.id}>'s third warning, kicking member in 30 seconds.`)
                         message.channel.send(warnEmbed);
                         const muteRole = message.guild.roles.cache.get('858962002626084904');
@@ -36,7 +36,7 @@ module.exports = {
                     }
     
                     // has 1 warning already
-                    else if (member.roles.cache.has('858956889295552533')) {
+                    else if (member.roles.cache.has('763407901456203856')) {
                         message.channel.send(warnEmbed);
                         member.roles.add(warning2);
                     }

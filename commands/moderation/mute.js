@@ -2,7 +2,7 @@ module.exports = {
     name: 'mute',
     description: 'mutes member from talking',
     execute(message, args, Discord, embedColor, ms){
-        if (message.member.roles.cache.has('858950608933355530') || message.member.roles.cache.has('858950631736606720')){
+        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const target = message.mentions.users.first();
             if (target) {
                 const muteRole = message.guild.roles.cache.get('858962002626084904');

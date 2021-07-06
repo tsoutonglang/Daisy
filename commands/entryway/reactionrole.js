@@ -2,7 +2,7 @@ module.exports = {
     name: 'reactionrole',
     description: "sets up a reaction role message",
     async execute (message, Discord, client, embedColor){
-        if (message.member.roles.cache.has('858950608933355530')){
+        if (message.member.roles.cache.has('738248181959229513')){
             const channel = '738288684725436516'; // baebee role channel
             const banner = 'https://i.imgur.com/XEGY8gr.png';
 

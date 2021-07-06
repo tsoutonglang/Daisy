@@ -3,7 +3,7 @@ module.exports = {
     description: "the laws of the land",
     execute(message) {
         // check if member is admin
-        if (message.member.roles.cache.has('858950608933355530')){
+        if (message.member.roles.cache.has('738248181959229513')){
             const banner = 'https://i.imgur.com/R9x0FZk.png';
             const divider = 'https://i.imgur.com/WLkfVsZ.png';
 

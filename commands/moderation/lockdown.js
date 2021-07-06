@@ -2,7 +2,7 @@ module.exports = {
     name: 'lockdown',
     description: 'locks down the server if a raid happens',
     async execute(message, args, Discord, embedColor, ms){
-        if (message.member.roles.cache.has('858950608933355530') || message.member.roles.cache.has('858950631736606720')){
+        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const role = message.guild.roles.cache.get('859979053717127168');
 
             if (!args[0])

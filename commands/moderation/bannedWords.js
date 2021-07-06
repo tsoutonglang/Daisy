@@ -24,8 +24,8 @@ module.exports = {
                 .setTimestamp();
             logChannel.send(logEmbed);
 
-            const warning1 = message.guild.roles.cache.get('858956889295552533');
-            const warning2 = message.guild.roles.cache.get('858962059168317461');
+            const warning1 = message.guild.roles.cache.get('763407901456203856');
+            const warning2 = message.guild.roles.cache.get('763408119005970472');
             const muteRole = message.guild.roles.cache.get('858962002626084904');
             const target = message.member;
 
@@ -44,7 +44,7 @@ module.exports = {
 
             function warningSystem(member) {
                 // has 2 warnings already
-                if (member.roles.cache.has('858962059168317461')) {
+                if (member.roles.cache.has('763408119005970472')) {
                     warnEmbed.setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved your third warning and will be kicked in 30 seconds.`)
                     setTimeout(function () {
                         member.kick();
@@ -52,7 +52,7 @@ module.exports = {
                 }
 
                 // has 1 warning already
-                else if (member.roles.cache.has('858956889295552533')) {
+                else if (member.roles.cache.has('763407901456203856')) {
                     message.channel.send(warnEmbed);
                     member.roles.add(warning2);
                 }

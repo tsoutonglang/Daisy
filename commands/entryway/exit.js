@@ -9,7 +9,7 @@ module.exports = {
             channel.send(`${guildMember.user.tag} has left the hive 😔💕`);
         } else { // daisy
             const channel = guildMember.guild.channels.cache.get('860807980970672148');
-            channel.send(`${guildMember.user.tag} has left the hive 😔💕`);
+            channel.send(`${guildMember.user.tag} has been dusted`);
         }
     }
 }

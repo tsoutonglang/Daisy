@@ -1,6 +1,12 @@
 <h1>Daisy</h1>
 <p>Daisy bot is a bot peronalized for the Anime & Artists Discord server! It's designed to have multiple purposes geared towards moderation and fun. The planned release date is July 29, 2021.</p>
 <h2>Change Log</h2>
+<h3>July 7, 2021</h3>
+  <p>
+    <ul>
+      <li>Got a server to roll out bot 24/7</li>
+    </ul>
+  </p>
 <h3>July 3, 2021</h3>
   <p>
     <ul>

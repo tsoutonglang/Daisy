@@ -38,6 +38,13 @@ client.snipes = new Collection();
 
 client.once('ready', () => {
     console.log('Daisy is online');
+    client.user.setPresence({
+        activity: {
+            type: "PLAYING",
+        },
+        status: 'with people\'s hearts'
+    })
+    .catch(console.error);
 });
 
 client.on('guildMemberAdd', guildMember => {

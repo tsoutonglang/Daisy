@@ -2,7 +2,7 @@ module.exports = {
     name: 'bannedWords',
     description: "thou shall not speak these words",
     execute(message, Discord, client, embedColor, ms) {
-    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'dyke', 'tranny', 'banana'];
+    let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'dyke', 'tranny'];
         if (message.channel.type === 'dm' || message.author.bot)
             return;
         

@@ -40,9 +40,9 @@ client.once('ready', () => {
     console.log('Daisy is online');
     client.user.setPresence({
         activity: {
-            type: "PLAYING",
+            name: 'the bee hive',
+            type: 'WATCHING',
         },
-        status: 'with people\'s hearts'
     })
     .catch(console.error);
 });

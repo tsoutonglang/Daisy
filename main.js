@@ -101,6 +101,8 @@ client.on('message', message => {
         client.commands.get('toss').execute(message, Discord, embedColor);
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, Discord, embedColor);
+    } else if (command == 'birthday'){
+        client.command == ('birthday').execute(message, Discord, embedColor);
     }
 
     // channels

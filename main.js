@@ -40,7 +40,7 @@ client.once('ready', () => {
     console.log('Daisy is online');
     client.user.setPresence({
         activity: {
-            name: 'the bee hive',
+            name: 'the bee movie',
             type: 'WATCHING',
         },
     })
@@ -102,7 +102,7 @@ client.on('message', message => {
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, Discord, embedColor);
     } else if (command == 'birthday'){
-        client.commands == ('birthday').execute(message, Discord, embedColor);
+        client.commands.get('birthday').execute(message, Discord, embedColor);
     }
 
     // channels

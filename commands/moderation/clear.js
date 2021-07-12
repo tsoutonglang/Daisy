@@ -2,7 +2,7 @@ module.exports = {
     name: 'clear',
     description: 'clear messages',
     async execute(message, args) {
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199') || message.guild.id('738144225966817331')){
             // was given no number
             if (!args[0])
                 return message.reply('please enter the amount of messages to clear.');

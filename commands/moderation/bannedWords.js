@@ -8,7 +8,7 @@ module.exports = {
             
         const baebee = '738238370488254534';
     
-        if (guildMember.guild.id === baebee) {
+        if (message.guild.id === baebee) {
             const logChannel = client.channels.cache.get('858954963899383808')
             let foundInText = false;
             for (var i in bannedWords){

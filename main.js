@@ -102,7 +102,7 @@ client.on('message', message => {
     } else if (command == 'yeet'){
         client.commands.get('yeet').execute(message, Discord, embedColor);
     } else if (command == 'birthday'){
-        client.command == ('birthday').execute(message, Discord, embedColor);
+        client.commands == ('birthday').execute(message, Discord, embedColor);
     }
 
     // channels

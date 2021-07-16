@@ -135,6 +135,10 @@ client.on('message', async message =>{
     client.commands.get('bannedWords').execute(message, Discord, client, embedColor, ms);
 });
 
+client.on('message', async message =>{
+    client.commands.get('family').execute(message, client);
+});
+
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
     if (reaction.emoji.name === '💕'){

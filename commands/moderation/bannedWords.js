@@ -67,9 +67,13 @@ module.exports = {
                     }
                 }
 
-                mute(target);
-                warningSystem(target);
-                message.delete();
+                if (message.channel('738268047600648283') || message.channel('766124910744829952'))
+                    return;
+                else {
+                    mute(target);
+                    warningSystem(target);
+                    message.delete();
+                }
             }
         }
         else {

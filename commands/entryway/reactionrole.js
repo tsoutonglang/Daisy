@@ -315,6 +315,7 @@ module.exports = {
             const promptEmoji = '855715166464507914';
             const ventEmoji = '855715166099341314';
             const writingEmoji = '855715166888132608';
+            const weddingEmoji = '866755121861230612';
 
             //roles
             const announcementRole = message.guild.roles.cache.get('741776504089739274');
@@ -324,6 +325,7 @@ module.exports = {
             const promptRole = message.guild.roles.cache.get('741781454870282402');
             const ventRole = message.guild.roles.cache.get('764706207353012224');
             const writingRole = message.guild.roles.cache.get('841298619675705374');
+            const weddingRole = message.guild.roles.cache.get('836087640507678730');
 
             let pingEmbed = new Discord.MessageEmbed()
                 .setColor(embedColor)
@@ -332,10 +334,11 @@ module.exports = {
                     + `<a:astarPurplePink:855715166427545600>  <@&741776504089739274>\n`
                     + `<a:astarPurple:855715167048695818>  <@&741780709940658226>\n`
                     + `<a:astarPink:855715166397005844>  <@&854004382072700928>\n`
-                    + `<a:astarGreen:855715166288347156>  <@&760238413160251402>\n`
-                    + `<a:astarBluePink:855715166464507914>  <@&741781454870282402>\n`
-                    + `<a:astarBluePastel:855715166099341314>  <@&764706207353012224>\n`
-                    + `<a:astarBlue:855715166888132608>  <@&841298619675705374>\n\n`
+                    + `<a:astarYellow:866755121861230612>  <@&760238413160251402>\n`
+                    + `<a:astarGreen:855715166288347156>  <@&741781454870282402>\n`
+                    + `<a:astarBluePink:855715166464507914>  <@&764706207353012224>\n`
+                    + `<a:astarBluePastel:855715166099341314>  <@&841298619675705374>\n`
+                    + `<a:astarBlue:855715166888132608>  <@836087640507678730>\n\n`
                     + `˚₊✩‧₊ ━━━━━━━━━━━━━━━ ₊‧✩₊˚`);
         
             messageEmbed = await message.channel.send(pingEmbed); // tells bot to wait for message to be sent before reacting
@@ -347,6 +350,7 @@ module.exports = {
             messageEmbed.react(promptEmoji);
             messageEmbed.react(ventEmoji);
             messageEmbed.react(writingEmoji);
+            messageEmbed.react(weddingEmoji);
 
             // add roles when user reacts
             client.on('messageReactionAdd', async (reaction, user) => {
@@ -378,6 +382,9 @@ module.exports = {
                     }
                     if (reaction.emoji.id === writingEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.add(writingRole);
+                    }
+                    if (reaction.emoji.id === weddingEmoji){
+                        await reaction.message.guild.members.cache.get(user.id).roles.add(weddingRole);
                     }
                 } else {
                     return;
@@ -414,6 +421,9 @@ module.exports = {
                     }
                     if (reaction.emoji.id === writingEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.remove(writingRole);
+                    }
+                    if (reaction.emoji.id === weddingEmoji){
+                        await reaction.message.guild.members.cache.get(user.id).roles.remove(weddingRole);
                     }
                 } else {
                     return;

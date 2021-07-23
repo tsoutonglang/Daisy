@@ -8,7 +8,7 @@ module.exports = {
             if (target) {
                 const warning1 = message.guild.roles.cache.get('763407901456203856');
                 const warning2 = message.guild.roles.cache.get('763408119005970472');
-                const logChannel = message.guild.channels.cache.get('858954963899383808');
+                const logChannel = message.guild.channels.cache.get('868197218258149396');
                 var reason = " ";
 
                 if (!args[1]) {

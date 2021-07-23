@@ -6,7 +6,7 @@
     <ul>
       <li>Added good morning and good night event triggers</li>
       <li>Updated the rules to be more concise</li>
-      <li>Fixed the channel id of the starboard</li>
+      <li>Fixed the channel id of the starboard and log</li>
       <li>Added the other servers Daisy is in into the welcome and exit events</li>
     </ul>
   </p>

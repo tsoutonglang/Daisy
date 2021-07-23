@@ -6,7 +6,7 @@ module.exports = {
             const member = message.mentions.users.first();
             if (member) {
                 const memberTarget = message.guild.members.cache.get(member.id);
-                const logChannel = message.guild.channels.cache.get('858954963899383808');
+                const logChannel = message.guild.channels.cache.get('868197218258149396');
                 var reason = " ";
 
                 if (!args[1]) {

@@ -1,6 +1,6 @@
 module.exports = {
     name: 'family',
-    description: "thou shall not speak these words",
+    description: "family >>>",
     execute(message, client) {
         let trigger ='family';
         

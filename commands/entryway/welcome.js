@@ -3,6 +3,8 @@ module.exports = {
     description: "welcome people into the server",
     execute(guildMember, Discord, embedColor){
         const baebee = '738238370488254534';
+        const daisy = '855168901267456060';
+        const moon = '738144225966817331';
         
         if (guildMember.guild.id === baebee) {
             const channel = guildMember.guild.channels.cache.get('738306568675786803');
@@ -24,8 +26,8 @@ module.exports = {
             guildMember.roles.add(divider1Role);
             guildMember.roles.add(divider2Role);
             channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
-        } else { // daisy channel
-            const channel = guildMember.guild.channels.cache.get('860807980970672148');
+        } else if (guildMember.guild.id === daisy) {
+            const channel = guildMember.guild.channels.cache.get('858424513238532149');
             const petalRole = guildMember.guild.roles.cache.get('859979053717127168');
             const welcomeMsg = new Discord.MessageEmbed()
                 .setColor(embedColor)
@@ -36,6 +38,9 @@ module.exports = {
             
             guildMember.roles.add(petalRole);
             channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
-        }        
+        } else if (guildMember.guild.id === moon) {
+            const welcome = guildMember.guild.roles.cache.get('744230534456017029');
+            guildMember.roles.add(welcome);
+        }
     }
 }

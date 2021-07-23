@@ -139,6 +139,10 @@ client.on('message', async message =>{
     client.commands.get('family').execute(message, client);
 });
 
+client.on('message', async message =>{
+    client.commands.get('morning').execute(message, client);
+});
+
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
     if (reaction.emoji.name === '💕'){

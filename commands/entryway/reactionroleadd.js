@@ -125,11 +125,11 @@ module.exports = {
         const announcementEmoji = '855715166427545600';
         const artEmoji = '855715167048695818';
         const fakeNewsEmoji = '855715166397005844';
-        const gameEmoji = '855715166288347156';
-        const promptEmoji = '855715166464507914';
-        const ventEmoji = '855715166099341314';
-        const writingEmoji = '855715166888132608';
-        const weddingEmoji = '866755121861230612';
+        const gameEmoji = '866755121861230612';
+        const promptEmoji = '855715166288347156';
+        const ventEmoji = '855715166464507914';
+        const writingEmoji = '855715166099341314';
+        const weddingEmoji = '855715166888132608';
 
         //roles
         const announcementRole = reaction.message.guild.roles.cache.get('741776504089739274');

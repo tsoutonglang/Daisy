@@ -2,7 +2,10 @@ module.exports = {
     name: 'reactionroleremove',
     description: "continues to give reactions even after bot restarts",
     async execute (reaction, user, client){
+        if (reaction.message.partial) await reaction.message.fetch();
+        if (reaction.partial) await reaction.fetch();
         if (user.bot) return;
+        console.log("bunny");
 
         // color
         // emojis

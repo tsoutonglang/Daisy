@@ -157,12 +157,21 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.emoji.name === '🐝'){
         client.commands.get('verification').execute(reaction, user, client);
     }
+
+    // add event for reaction role msg so i don't have to redo it everytime the bot restarts
+    if (reaction.message.channel === '738288684725436516'){
+        client.commands.get('reactionroleadd').execute(reaction, user, client);
+    }
 });
 
 client.on('messageReactionRemove', async (reaction, user) => {
     // starboard
     if (reaction.emoji.name === '<:hyena_laugh:738261600003424387>'){
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
+    }
+
+    if (reaction.message.channel === '738288684725436516'){
+        client.commands.get('reactionroleremove').execute(reaction, user, client);
     }
 });
 

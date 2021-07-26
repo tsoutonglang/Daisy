@@ -2,10 +2,9 @@ module.exports = {
     name: 'reactionroleremove',
     description: "continues to give reactions even after bot restarts",
     async execute (reaction, user, client){
-        if (reaction.reaction.partial) await reaction.reaction.fetch();
+        if (reaction.message.partial) await reaction.message.fetch();
         if (reaction.partial) await reaction.fetch();
         if (user.bot) return;
-        console.log("bunny");
 
         // color
         // emojis
@@ -36,37 +35,37 @@ module.exports = {
 
         // connects emoji to role
         if (reaction.emoji.id === strawberryEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(strawberryRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(strawberryRole);
         }
         if (reaction.emoji.id === peachEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(peachRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(peachRole);
         }
         if (reaction.emoji.id === latteEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(latteRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(latteRole);
         }
         if (reaction.emoji.id === bananaEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(bananaRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(bananaRole);
         }
         if (reaction.emoji.id === kiwiEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(kiwiRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(kiwiRole);
         }
         if (reaction.emoji.id === blueberryEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(blueberryRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(blueberryRole);
         }
         if (reaction.emoji.id === grapeEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(grapeRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(grapeRole);
         }
         if (reaction.emoji.id === macaronEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(macaronRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(macaronRole);
         }
         if (reaction.emoji.id === chocolateEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(chocolateRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(chocolateRole);
         }
         if (reaction.emoji.id === blackberryEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(blackberryRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(blackberryRole);
         }
         if (reaction.emoji.id === onigiriEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(onigiriRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(onigiriRole);
         }
 
         // pronouns
@@ -94,31 +93,31 @@ module.exports = {
 
         // connects emoji to role
         if (reaction.emoji.id === sheherEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(sheherRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(sheherRole);
         }
         if (reaction.emoji.id === hehimEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(hehimRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(hehimRole);
         }
         if (reaction.emoji.id === shehimEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(shehimRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(shehimRole);
         }
         if (reaction.emoji.id === shetheyEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(shetheyRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(shetheyRole);
         }
         if (reaction.emoji.id === hetheyEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(hetheyRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(hetheyRole);
         }
         if (reaction.emoji.id === theythemEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(theythemRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(theythemRole);
         }
         if (reaction.emoji.id === anyEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(anyRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(anyRole);
         }
         if (reaction.emoji.id === askEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(askRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(askRole);
         }
         if (reaction.emoji.id === nameEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(nameRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(nameRole);
         }
 
         // pings
@@ -144,28 +143,28 @@ module.exports = {
 
         // connects emoji to role
         if (reaction.emoji.id === announcementEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(announcementRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(announcementRole);
         }
         if (reaction.emoji.id === artEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(artRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(artRole);
         }
         if (reaction.emoji.id === fakeNewsEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(fakeNewsRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(fakeNewsRole);
         }
         if (reaction.emoji.id === gameEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(gameRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(gameRole);
         }
         if (reaction.emoji.id === promptEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(promptRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(promptRole);
         }
         if (reaction.emoji.id === ventEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(ventRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(ventRole);
         }
         if (reaction.emoji.id === writingEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(writingRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(writingRole);
         }
         if (reaction.emoji.id === weddingEmoji){
-            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(weddingRole);
+            await reaction.message.guild.members.cache.get(user.id).roles.remove(weddingRole);
         }
     }
 }

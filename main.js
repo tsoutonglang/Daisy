@@ -159,7 +159,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     }
 
     // add event for reaction role msg so i don't have to redo it everytime the bot restarts
-    if (reaction.message.channel === '738288684725436516'){
+    if (reaction.message.channel.id === '738288684725436516'){
         client.commands.get('reactionroleadd').execute(reaction, user, client);
     }
 });
@@ -170,7 +170,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
     }
 
-    if (reaction.message.channel === '738288684725436516'){
+    if (reaction.message.channel.id === '738288684725436516'){
         client.commands.get('reactionroleremove').execute(reaction, user, client);
     }
 });

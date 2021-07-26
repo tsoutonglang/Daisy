@@ -2,7 +2,7 @@ module.exports = {
     name: 'reactionroleremove',
     description: "continues to give reactions even after bot restarts",
     async execute (reaction, user, client){
-        if (reaction.message.partial) await reaction.message.fetch();
+        if (reaction.reaction.partial) await reaction.reaction.fetch();
         if (reaction.partial) await reaction.fetch();
         if (user.bot) return;
         console.log("bunny");
@@ -22,51 +22,51 @@ module.exports = {
         const onigiriEmoji = '855715140543840286';
         
         // roles
-        const strawberryRole = message.guild.roles.cache.get('739408971374526544');
-        const peachRole = message.guild.roles.cache.get('739411499314839613');
-        const latteRole = message.guild.roles.cache.get('739409468328116394');
-        const bananaRole = message.guild.roles.cache.get('739407375899033691');
-        const kiwiRole = message.guild.roles.cache.get('739428147111395388');
-        const blueberryRole = message.guild.roles.cache.get('739412039864287303');
-        const grapeRole = message.guild.roles.cache.get('739408160082886687');
-        const macaronRole = message.guild.roles.cache.get('739406137807470685');
-        const chocolateRole = message.guild.roles.cache.get('739410430799118427');
-        const blackberryRole = message.guild.roles.cache.get('739410937244680234');
-        const onigiriRole = message.guild.roles.cache.get('739409316947427338');
+        const strawberryRole = reaction.message.guild.roles.cache.get('739408971374526544');
+        const peachRole = reaction.message.guild.roles.cache.get('739411499314839613');
+        const latteRole = reaction.message.guild.roles.cache.get('739409468328116394');
+        const bananaRole = reaction.message.guild.roles.cache.get('739407375899033691');
+        const kiwiRole = reaction.message.guild.roles.cache.get('739428147111395388');
+        const blueberryRole = reaction.message.guild.roles.cache.get('739412039864287303');
+        const grapeRole = reaction.message.guild.roles.cache.get('739408160082886687');
+        const macaronRole = reaction.message.guild.roles.cache.get('739406137807470685');
+        const chocolateRole = reaction.message.guild.roles.cache.get('739410430799118427');
+        const blackberryRole = reaction.message.guild.roles.cache.get('739410937244680234');
+        const onigiriRole = reaction.message.guild.roles.cache.get('739409316947427338');
 
         // connects emoji to role
         if (reaction.emoji.id === strawberryEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(strawberryRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(strawberryRole);
         }
         if (reaction.emoji.id === peachEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(peachRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(peachRole);
         }
         if (reaction.emoji.id === latteEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(latteRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(latteRole);
         }
         if (reaction.emoji.id === bananaEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(bananaRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(bananaRole);
         }
         if (reaction.emoji.id === kiwiEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(kiwiRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(kiwiRole);
         }
         if (reaction.emoji.id === blueberryEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(blueberryRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(blueberryRole);
         }
         if (reaction.emoji.id === grapeEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(grapeRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(grapeRole);
         }
         if (reaction.emoji.id === macaronEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(macaronRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(macaronRole);
         }
         if (reaction.emoji.id === chocolateEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(chocolateRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(chocolateRole);
         }
         if (reaction.emoji.id === blackberryEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(blackberryRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(blackberryRole);
         }
         if (reaction.emoji.id === onigiriEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(onigiriRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(onigiriRole);
         }
 
         // pronouns
@@ -82,43 +82,43 @@ module.exports = {
         const nameEmoji = '856448642356477964';
 
         // roles
-        const sheherRole = message.guild.roles.cache.get('738286665755263017');
-        const hehimRole = message.guild.roles.cache.get('738286829815595100');
-        const shehimRole = message.guild.roles.cache.get('853930711182213120');
-        const shetheyRole = message.guild.roles.cache.get('738286898128355338');
-        const hetheyRole = message.guild.roles.cache.get('738286928620683335');
-        const theythemRole = message.guild.roles.cache.get('738286868482752553');
-        const anyRole = message.guild.roles.cache.get('738292442260045844');
-        const askRole = message.guild.roles.cache.get('854006351541174324');
-        const nameRole = message.guild.roles.cache.get('854053162067689492');
+        const sheherRole = reaction.message.guild.roles.cache.get('738286665755263017');
+        const hehimRole = reaction.message.guild.roles.cache.get('738286829815595100');
+        const shehimRole = reaction.message.guild.roles.cache.get('853930711182213120');
+        const shetheyRole = reaction.message.guild.roles.cache.get('738286898128355338');
+        const hetheyRole = reaction.message.guild.roles.cache.get('738286928620683335');
+        const theythemRole = reaction.message.guild.roles.cache.get('738286868482752553');
+        const anyRole = reaction.message.guild.roles.cache.get('738292442260045844');
+        const askRole = reaction.message.guild.roles.cache.get('854006351541174324');
+        const nameRole = reaction.message.guild.roles.cache.get('854053162067689492');
 
         // connects emoji to role
         if (reaction.emoji.id === sheherEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(sheherRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(sheherRole);
         }
         if (reaction.emoji.id === hehimEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(hehimRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(hehimRole);
         }
         if (reaction.emoji.id === shehimEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(shehimRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(shehimRole);
         }
         if (reaction.emoji.id === shetheyEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(shetheyRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(shetheyRole);
         }
         if (reaction.emoji.id === hetheyEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(hetheyRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(hetheyRole);
         }
         if (reaction.emoji.id === theythemEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(theythemRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(theythemRole);
         }
         if (reaction.emoji.id === anyEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(anyRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(anyRole);
         }
         if (reaction.emoji.id === askEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(askRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(askRole);
         }
         if (reaction.emoji.id === nameEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(nameRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(nameRole);
         }
 
         // pings
@@ -133,39 +133,39 @@ module.exports = {
         const weddingEmoji = '866755121861230612';
 
         //roles
-        const announcementRole = message.guild.roles.cache.get('741776504089739274');
-        const artRole = message.guild.roles.cache.get('741780709940658226');
-        const fakeNewsRole = message.guild.roles.cache.get('854004382072700928');
-        const gameRole = message.guild.roles.cache.get('760238413160251402');
-        const promptRole = message.guild.roles.cache.get('741781454870282402');
-        const ventRole = message.guild.roles.cache.get('764706207353012224');
-        const writingRole = message.guild.roles.cache.get('841298619675705374');
-        const weddingRole = message.guild.roles.cache.get('836087640507678730');
+        const announcementRole = reaction.message.guild.roles.cache.get('741776504089739274');
+        const artRole = reaction.message.guild.roles.cache.get('741780709940658226');
+        const fakeNewsRole = reaction.message.guild.roles.cache.get('854004382072700928');
+        const gameRole = reaction.message.guild.roles.cache.get('760238413160251402');
+        const promptRole = reaction.message.guild.roles.cache.get('741781454870282402');
+        const ventRole = reaction.message.guild.roles.cache.get('764706207353012224');
+        const writingRole = reaction.message.guild.roles.cache.get('841298619675705374');
+        const weddingRole = reaction.message.guild.roles.cache.get('836087640507678730');
 
         // connects emoji to role
         if (reaction.emoji.id === announcementEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(announcementRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(announcementRole);
         }
         if (reaction.emoji.id === artEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(artRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(artRole);
         }
         if (reaction.emoji.id === fakeNewsEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(fakeNewsRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(fakeNewsRole);
         }
         if (reaction.emoji.id === gameEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(gameRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(gameRole);
         }
         if (reaction.emoji.id === promptEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(promptRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(promptRole);
         }
         if (reaction.emoji.id === ventEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(ventRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(ventRole);
         }
         if (reaction.emoji.id === writingEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(writingRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(writingRole);
         }
         if (reaction.emoji.id === weddingEmoji){
-            await reaction.message.guild.members.cache.get(user.id).roles.remove(weddingRole);
+            await reaction.reaction.message.guild.members.cache.get(user.id).roles.remove(weddingRole);
         }
     }
 }

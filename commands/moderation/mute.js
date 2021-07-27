@@ -7,9 +7,11 @@ module.exports = {
             if (target) {
                 const muteRole = message.guild.roles.cache.get('862089710737424464');
                 const memberTarget = message.guild.members.cache.get(target.id);
+                const verifyRole = message.guild.roles.cache.get('738601010116689953');
                 
                 if (!args[1]) {
                     memberTarget.roles.add(muteRole);
+                    memberTarget.roles.remove(verifyRole);
                     let muteEmbed = new Discord.MessageEmbed()
                         .setDescription(`${memberTarget} has been muted indefinitely`)
                         .setColor(embedColor);
@@ -26,6 +28,7 @@ module.exports = {
 
                 setTimeout(function () {
                     memberTarget.roles.remove(muteRole);
+                    memberTarget.roles.add(verifyRole);
                 }, (ms(args[1])));
             } else {
                 message.reply('you gotta mention a valid user');

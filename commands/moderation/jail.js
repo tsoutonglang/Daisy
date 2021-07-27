@@ -6,12 +6,19 @@ module.exports = {
             const target = message.mentions.members.first();
             const jailRole = message.guild.roles.cache.get('767479238243778561');
             const verifyRole = message.guild.roles.cache.get('738601010116689953');
-            
-            if (target) {
-                const logChannel = message.guild.channels.cache.get('868197218258149396');
+            var reason = " ";
 
+            if (target) {
+                if (!args[1]) {
+                    reason = "Unspecified";
+                } else {
+                    reason = args.splice(1).join(" ");
+                }
+
+                const logChannel = message.guild.channels.cache.get('868197218258149396');
                 let jailEmbed = new Discord.MessageEmbed()
                     .setDescription(`<@${target.id}> was put in jail.`)
+                    .addField("Reason", reason)
                     .setColor(embedColor)
                     .setTimestamp();
 

@@ -49,10 +49,13 @@ module.exports = {
             return;
         
         if (reaction.message.partial) {
+            console.log("message is partial");
             await reaction.fetch();
             await reaction.message.fetch();
-            if (reaction.count >= 3)
-                handleStarboard();
+            console.log("count: " + reaction.count);
+            if (reaction.count >= 3){
+                console.log("message will be added");
+                handleStarboard();}
         }
     }
 }

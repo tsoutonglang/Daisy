@@ -28,6 +28,7 @@ module.exports = {
                 + "**ban**: ban someone from the server\n"
                 + "**clear**: clear up to 100 messages\n"
                 + "**kick**: kick a member from the server\n"
+                + "**jail**: put a member in a private channel with the staff\n"
                 + "**lockdown**: lock the server down during raids\n"
                 + "**mute**: mute someone for a certain amount of time or indefinitely\n"
                 + "**warn**: give a member a warning"}

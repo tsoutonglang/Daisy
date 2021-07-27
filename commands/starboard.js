@@ -51,7 +51,7 @@ module.exports = {
         if (reaction.message.partial) {
             await reaction.fetch();
             await reaction.message.fetch();
-            if (reaction.count >= 2)
+            if (reaction.count >= 3)
                 handleStarboard();
         }
     }

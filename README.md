@@ -6,6 +6,9 @@
     <ul>
       <li>added bot to anime & artists server</li>
       <li>fixed pronouns and wedding id's in reaction roles</li>
+      <li>added jail command</li>
+      <li>fixed mute command to remove baebee role</li>
+      <li>fixing starboard command</li>
     </ul>
   </p>
 <h3>July 23, 2021</h3>

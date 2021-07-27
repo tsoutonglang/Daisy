@@ -127,6 +127,8 @@ client.on('message', message => {
         client.commands.get('warn').execute(message, args, Discord, embedColor, ms);
     } else if (command == 'lockdown'){
         client.commands.get('lockdown').execute(message, args);
+    } else if (command == 'jail'){
+        client.commands.get('jail').execute(message, args, Discord, embedColor);
     }
 });
 

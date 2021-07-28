@@ -27,6 +27,7 @@ module.exports = {
                     .setImage(image);
 
                 existingMsg.edit(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
+                console.log("message has been edited");
             } else {
                 console.log("message added to starboard");
                 const embed = new Discord.MessageEmbed()
@@ -43,6 +44,7 @@ module.exports = {
 
                 if (starboard)
                     starboard.send(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
+                console.log("message has been added");
             }
         }
 
@@ -51,11 +53,17 @@ module.exports = {
         
         if (reaction.message.partial) {
             console.log("message is partial");
-            console.log("count: " + reaction.count);
+            await reaction.fetch();
+            await reaction.message.fetch();
             if (reaction.count >= 3){
-                console.log("message eligible for starboard");
+                console.log("count: " + reaction.count);
                 handleStarboard();
-	    }
+            }
+        } else {
+            if (reaction.count >= 3) {
+                console.log("count: " + reaction.count);
+                handleStarboard();
+            }
         }
     }
 }

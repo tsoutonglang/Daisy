@@ -6,13 +6,14 @@ module.exports = {
        
         const handleStarboard = async ()=> {
             const msgs = await starboard.messages.fetch({ limit: 100 });
-            const fetchedMsg = reaction.message;
+            const fetchedMsg = await reaction.message.fetch();
             const image = fetchedMsg.attachments.size > 0 ? fetchedMsg.attachments.first().url : '';
             const existingMsg = msgs.find(msg =>
                 msg.embeds.length === 1 ?
                 (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
             
             if (existingMsg) {
+		console.log("message existed before");
                 const embed = new Discord.MessageEmbed()
                     .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
@@ -50,12 +51,11 @@ module.exports = {
         
         if (reaction.message.partial) {
             console.log("message is partial");
-            await reaction.fetch();
-            await reaction.message.fetch();
             console.log("count: " + reaction.count);
             if (reaction.count >= 3){
-                console.log("message will be added");
-                handleStarboard();}
+                console.log("message eligible for starboard");
+                handleStarboard();
+	    }
         }
     }
 }

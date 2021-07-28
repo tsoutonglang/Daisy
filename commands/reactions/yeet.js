@@ -12,7 +12,7 @@ module.exports = {
         if (message.mentions.members.first()){
             let targetMember = message.mentions.members.first().displayName;
 
-            newEmbed.setDescription(`**${authorMember}** yeeted** **${targetMember}**`)
+            newEmbed.setDescription(`**${authorMember}** yeeted **${targetMember}**`)
         }
 
         message.channel.send(newEmbed);

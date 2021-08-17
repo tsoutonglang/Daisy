@@ -152,7 +152,6 @@ client.on('message', async message =>{
 client.on('messageReactionAdd', async (reaction, user) => {  
     // starboard
     if (reaction.emoji.id === '738261600003424387'){
-        console.log("reaction added");
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
     }
 
@@ -170,7 +169,6 @@ client.on('messageReactionAdd', async (reaction, user) => {
 client.on('messageReactionRemove', async (reaction, user) => {
     // starboard
     if (reaction.emoji.id === '738261600003424387'){
-        console.log("reaction removed");
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
     }
 

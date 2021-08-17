@@ -7,10 +7,10 @@ module.exports = {
             return;
             
         const baebee = '738238370488254534';
-    
         if (message.guild.id === baebee) {
             const logChannel = client.channels.cache.get('868197218258149396')
             let foundInText = false;
+            let bannedMessage = message.content.toLowerCase();
             for (var i in bannedWords){
                 if (message.content.toLowerCase().includes(bannedWords[i].toLowerCase()))
                     foundInText = true;
@@ -26,6 +26,7 @@ module.exports = {
                     .setColor(embedColor)
                     .setTimestamp();
                 logChannel.send(logEmbed);
+                console.log(`banned word - ${bannedMessage}`)
 
                 const warning1 = message.guild.roles.cache.get('763407901456203856');
                 const warning2 = message.guild.roles.cache.get('763408119005970472');

@@ -24,6 +24,7 @@ module.exports = {
                     .setTimestamp();
                 
                 logChannel.send(banEmbed);
+                console.log(`ban - <@${target.id}>`);
                 message.channel.send(banEmbed);
                 message.delete();
             } else {

@@ -131,15 +131,12 @@ module.exports = {
                     // connects emoji to role
                     if (reaction.emoji.id === strawberryEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.remove(strawberryRole);
-                        console.log('red remove');
                     }
                     if (reaction.emoji.id === peachEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.remove(peachRole);
-                        console.log('peach remove');
                     }
                     if (reaction.emoji.id === latteEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.remove(latteRole);
-                        console.log('latte remove');
                     }
                     if (reaction.emoji.id === bananaEmoji){
                         await reaction.message.guild.members.cache.get(user.id).roles.remove(bananaRole);

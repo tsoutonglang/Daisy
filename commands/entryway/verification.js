@@ -14,6 +14,7 @@ module.exports = {
 
             // remove unverified role
             await reaction.message.guild.members.cache.get(user.id).roles.remove(unverifiedRole);
+            console.log(`verification - <@${reaction.message.guild.members.cache.get(user.id)}>`);
         }
     }
 }

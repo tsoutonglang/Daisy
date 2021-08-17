@@ -13,7 +13,6 @@ module.exports = {
                 (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
             
             if (existingMsg) {
-		console.log("message existed before");
                 const embed = new Discord.MessageEmbed()
                     .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
@@ -27,9 +26,8 @@ module.exports = {
                     .setImage(image);
 
                 existingMsg.edit(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
-                console.log("message has been edited");
+                console.log("starboard - edited");
             } else {
-                console.log("message added to starboard");
                 const embed = new Discord.MessageEmbed()
                     .setColor(embedColor)
                     .setAuthor(fetchedMsg.author.tag, fetchedMsg.author.displayAvatarURL())
@@ -44,7 +42,7 @@ module.exports = {
 
                 if (starboard)
                     starboard.send(`${reaction.count} - <:hyena_laugh:738261600003424387>`, embed);
-                console.log("message has been added");
+                console.log("starboard - added");
             }
         }
 
@@ -52,16 +50,13 @@ module.exports = {
             return;
         
         if (reaction.message.partial) {
-            console.log("message is partial");
             await reaction.fetch();
             await reaction.message.fetch();
             if (reaction.count >= 3){
-                console.log("count: " + reaction.count);
                 handleStarboard();
             }
         } else {
             if (reaction.count >= 3) {
-                console.log("count: " + reaction.count);
                 handleStarboard();
             }
         }

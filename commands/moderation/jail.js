@@ -23,6 +23,7 @@ module.exports = {
                     .setTimestamp();
 
                 logChannel.send(jailEmbed);
+                console.log(`jail - <@${target.id}>`);
                 target.roles.add(jailRole);
                 target.roles.remove(verifyRole);
             } else {

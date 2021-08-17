@@ -50,6 +50,7 @@ module.exports = {
 
                 warningSystem(target);
                 logChannel.send(warnEmbed);
+                console.log(`warn - <@${target.id}>`);
                 message.delete();
             } else {
                 message.reply('you gotta mention a valid user.');

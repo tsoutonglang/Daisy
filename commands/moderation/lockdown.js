@@ -3,7 +3,7 @@ module.exports = {
     description: 'locks down the server if a raid happens',
     async execute(message, args, Discord, embedColor, ms){
         if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
-            const role = message.guild.roles.cache.get('859979053717127168');
+            const role = message.guild.roles.cache.get('738601010116689953');
 
             if (!args[0])
                 return message.reply("please enter true or false.");
@@ -16,12 +16,12 @@ module.exports = {
             const perms = role.permissions.toArray();
             if (query === "false") {
                 perms.push('SEND_MESSAGES');
-                console.log("Server is no longer in lockdown");
+                console.log("lockdown - ended");
                 await role.edit({ permissions: perms});
                 message.channel.send("Server is unlocked.");
             } else {
                 const newPerms = perms.filter((perm) => perm !== 'SEND_MESSAGES');
-                console.log("Server is going under lockdown.");
+                console.log("lockdown - undergoing");
                 await role.edit({ permissions: newPerms});
                 message.channel.send("Server is under lockdown.");
             }

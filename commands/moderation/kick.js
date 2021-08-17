@@ -24,6 +24,7 @@ module.exports = {
                     .setTimestamp();
                 
                 logChannel.send(kickEmbed);
+                console.log(`kick - <@${target.id}>`);
                 message.channel.send(kickEmbed);
                 message.delete();
             } else {

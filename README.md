@@ -5,6 +5,7 @@
   <p>
     <ul>
       <li>tweaked the censoring of the banned words in rules</li>
+      <li>started adding neopronouns roles</li>
     </ul>
   </p>
 <h3>September 7, 2021</h3>

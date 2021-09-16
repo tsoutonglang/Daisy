@@ -33,6 +33,7 @@ module.exports = {
                 const warning2 = message.guild.roles.cache.get('763408119005970472');
                 const muteRole = message.guild.roles.cache.get('858962002626084904');
                 const target = message.member;
+                const verifyRole = message.guild.roles.cache.get('738601010116689953');
 
                 let warnEmbed = new Discord.MessageEmbed()
                     .setDescription(`That word is not allowed here <@${message.author.id}>! You've recieved a warning and will be muted for 3 minutes.`)
@@ -41,9 +42,11 @@ module.exports = {
 
                 function mute(member) {
                     member.roles.add(muteRole);
+                    member.roles.remove(verifyRole);
                     
                     setTimeout(function () {
                         member.roles.remove(muteRole);
+                        member.roles.add(verifyRole);
                     }, ms("3m"));
                 }
 

@@ -27,7 +27,7 @@ module.exports = {
             guildMember.roles.add(divider2Role);
             channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
         } else if (guildMember.guild.id === daisy) {
-            const channel = guildMember.guild.channels.cache.get('858424513238532149');
+            const channel = guildMember.guild.channels.cache.get('887923043945549854');
             const petalRole = guildMember.guild.roles.cache.get('859979053717127168');
             const welcomeMsg = new Discord.MessageEmbed()
                 .setColor(embedColor)

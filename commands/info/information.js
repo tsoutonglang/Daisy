@@ -2,7 +2,7 @@ module.exports = {
     name: 'information',
     description: 'information about Anime & Artists',
     execute(message) {
-        if (message.member.roles.cache.has('738248181959229513')){
+        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('858950608933355530')){
             const banner = 'https://i.imgur.com/WA7T2up.png';
             const divider = 'https://i.imgur.com/WLkfVsZ.png';
             const staffImg = 'https://i.imgur.com/17rRLeS.gif';

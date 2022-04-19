@@ -138,7 +138,8 @@ client.on('message', async message =>{
 });
 
 client.on('message', async message =>{
-    client.commands.get('family').execute(message, client);
+    if (message.member.id != '399586594329460737')
+        client.commands.get('family').execute(message, client);
 });
 
 client.on('message', async message =>{

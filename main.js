@@ -161,7 +161,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     }
 
     // add event for reaction role msg so i don't have to redo it everytime the bot restarts
-    if (reaction.message.channel.id === '738288684725436516'){
+    if (reaction.message.channel.id === '738288684725436516' || reaction.message.channel.id === '887215172664557579'){
         client.commands.get('reactionroleadd').execute(reaction, user, client);
     }
 });

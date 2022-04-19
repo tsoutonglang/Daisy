@@ -120,6 +120,23 @@ module.exports = {
             await reaction.message.guild.members.cache.get(user.id).roles.add(nameRole);
         }
 
+        // neopronouns
+        // emojis
+        const ititsEmoji = '🌿';
+        const xexerEmoji = '🌷';
+
+        // roles
+        const  ititsRole = reaction.message.guild.roles.cache.get('887207375260499978');
+        const xexerRole = reaction.message.guild.roles.cache.get('887207464183939113');
+
+        // connects emoji to role
+        if (reaction.emoji.id === ititsEmoji){
+            await reaction.message.guild.members.cache.get(user.id).roles.add(ititsRole);
+        }
+        if (reaction.emoji.id === xexerEmoji){
+            await reaction.message.guild.members.cache.get(user.id).roles.add(xexerRole);
+        }
+        
         // pings
         //emojis
         const announcementEmoji = '855715166427545600';

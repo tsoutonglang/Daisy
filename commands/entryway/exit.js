@@ -13,7 +13,7 @@ module.exports = {
             const channel = guildMember.guild.channels.cache.get('858424513238532149');
             channel.send(`${guildMember.user.tag} has been dusted`);
         } else if (guildMember.guild.id === moon) {
-            const channel = guildMember.guild.channels.cache.get('744231959319937034');
+            const channel = guildMember.guild.channels.cache.get('983217110761209906');
             channel.send(`${guildMember.user.tag} has been dusted`);
         }
     }

@@ -107,7 +107,10 @@ client.on('message', message => {
 
     // channels
     else if (command === 'reactionrole'){
-        client.commands.get('reactionrole').execute(message, Discord, client, embedColor);
+        if (message.channel.id === '738288684725436516')
+            client.commands.get('bbreactionrole').execute(message, Discord, client, embedColor);
+        if (message.channel.id === '983217126418579486')
+            client.commands.get('moonreactionrole').execute(message, Discord, client, embedColor);
     } else if (command == 'rules'){
         client.commands.get('rules').execute(message);
     } else if (command == 'information'){
@@ -162,8 +165,12 @@ client.on('messageReactionAdd', async (reaction, user) => {
     }
 
     // add event for reaction role msg so i don't have to redo it everytime the bot restarts
-    if (reaction.message.channel.id === '738288684725436516' || reaction.message.channel.id === '887215172664557579'){
-        client.commands.get('reactionroleadd').execute(reaction, user, client);
+    if (reaction.message.channel.id === '738288684725436516'){
+        client.commands.get('bbreactionroleadd').execute(reaction, user, client);
+    }
+
+    if (reaction.message.channel.id === '983217126418579486'){
+        client.commands.get('moonreactionroleadd').execute(reaction, user, client);
     }
 });
 
@@ -174,7 +181,11 @@ client.on('messageReactionRemove', async (reaction, user) => {
     }
 
     if (reaction.message.channel.id === '738288684725436516'){
-        client.commands.get('reactionroleremove').execute(reaction, user, client);
+        client.commands.get('bbreactionroleremove').execute(reaction, user, client);
+    }
+
+    if (reaction.message.channel.id === '983217126418579486'){
+        client.commands.get('moonreactionroleremove').execute(reaction, user, client);
     }
 });
 

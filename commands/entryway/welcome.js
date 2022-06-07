@@ -39,8 +39,19 @@ module.exports = {
             guildMember.roles.add(petalRole);
             channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
         } else if (guildMember.guild.id === moon) {
-            const welcome = guildMember.guild.roles.cache.get('744230534456017029');
-            guildMember.roles.add(welcome);
+            const channel = guildMember.guild.channels.cache.get('983217110761209906');
+            const moon = guildMember.guild.roles.cache.get('744230534456017029');
+
+            guildMember.roles.add(moon);
+            const welcomeMsg = new Discord.MessageEmbed()
+                .setColor(embedColor)
+                .setTitle("Welcome to The Moon!")
+                .setThumbnail('https://i.imgur.com/qilLXH7.gif')
+                .setDescription("<a:sideheart:858626585184043018> Read through <#983227547712118844>\n"
+                    + "<a:sideheart:858626585184043018> Get some roles in <#983217126418579486>")
+                .setImage('https://i.imgur.com/QEgHe3Y.gif')
+                .setFooter("Please enjoy your stay!", "https://i.imgur.com/PmRwT69.png");
+            channel.send(`<a:hearts:784316489523134485> <@${guildMember.user.id}> <a:hearts:784316489523134485>\n`, {embed: welcomeMsg});
         }
     }
 }

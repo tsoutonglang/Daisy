@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'reactionrole',
+    name: 'bbreactionrole',
     description: "sets up a reaction role message",
     async execute (message, Discord, client, embedColor){
         if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('858950608933355530')){

@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'reactionroleadd',
+    name: 'bbreactionroleadd',
     description: "continues to give reactions even after bot restarts",
     async execute (reaction, user, client){
         if (reaction.message.partial) await reaction.message.fetch();

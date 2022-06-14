@@ -9,12 +9,12 @@ module.exports = {
         // pronouns
         // emojis
         const sheherEmoji = '🌒';
-            const hehimEmoji = '🌓';
-            const shetheyEmoji = '🌔';
-            const hetheyEmoji = '🌔';
-            const theythemEmoji = '🌖';
-            const anyEmoji = '🌗';
-            const nameEmoji = '🌘';
+        const hehimEmoji = '🌓';
+        const shetheyEmoji = '🌔';
+        const hetheyEmoji = '🌔';
+        const theythemEmoji = '🌖';
+        const anyEmoji = '🌗';
+        const nameEmoji = '🌘';
 
         // roles
         const sheherRole = reaction.message.guild.roles.cache.get('983243166595547136');

@@ -168,10 +168,6 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.channel.id === '738288684725436516'){
         client.commands.get('bbreactionroleadd').execute(reaction, user, client);
     }
-
-    if (reaction.message.channel.id === '983217126418579486'){
-        client.commands.get('moonreactionroleadd').execute(reaction, user, client);
-    }
 });
 
 client.on('messageReactionRemove', async (reaction, user) => {
@@ -182,10 +178,6 @@ client.on('messageReactionRemove', async (reaction, user) => {
 
     if (reaction.message.channel.id === '738288684725436516'){
         client.commands.get('bbreactionroleremove').execute(reaction, user, client);
-    }
-
-    if (reaction.message.channel.id === '983217126418579486'){
-        client.commands.get('moonreactionroleremove').execute(reaction, user, client);
     }
 });
 

@@ -1,9 +1,8 @@
 module.exports = {
     name: 'mute',
     description: 'mutes member from talking',
-    execute(message, args, Discord, embedColor, ms){
-        // A&A admin || A&A mod
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+    execute(message, args, Discord, embedColor, ms, bbAdmin, bbMod){
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod)){
             const target = message.mentions.users.first();
             if (target) {
                 const muteRole = message.guild.roles.cache.get('862089710737424464');

@@ -5,6 +5,7 @@
   <p>
     <ul>
       <li>JK. I'm rolling back to keeping Daisy for Anime & Artists just for simplicity's sake. I'll probably change Rin's functionality to be for The Moon instead of just being a corn bot. I'll keep Daisy's reaction commands available univerally still, but all moderation tools are just for A&A.</li>
+      <li>I modified the variables to make any guild and admin ID's universal. Hopefully this will make it less confusing what number is what.</li>
     </ul>
   </p>
 <h3>June 5, 2022</h3>

@@ -1,9 +1,8 @@
 module.exports = {
     name: 'clear',
     description: 'clear messages',
-    async execute(message, args) {
-        // A&A admin || A&A mod || Moon admin || Daisy admin
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199') || message.member.roles.cache.has('738252315747942452') || message.member.roles.cache.has('858950608933355530')){
+    async execute(message, args, bbAdmin, bbMod, daisyAdmin) {
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod) || message.member.roles.cache.has(daisyAdmin)){
             // was given no number
             if (!args[0])
                 return message.reply('please enter the amount of messages to clear.');

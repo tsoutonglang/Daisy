@@ -1,13 +1,12 @@
 module.exports = {
     name: 'ban',
     description: 'ban member from server',
-    execute(message, Discord, embedColor, args){
-        // A&A admin || A&A mod
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+    execute(message, Discord, embedColor, args, bbAdmin, bbMod, bbLog){
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod)){
             const member = message.mentions.users.first();
             if (member) {
                 const memberTarget = message.guild.members.cache.get(member.id);
-                const logChannel = message.guild.channels.cache.get('868197218258149396');
+                const logChannel = message.guild.channels.cache.get(bbLog);
                 var reason = " ";
 
                 if (!args[1]) {

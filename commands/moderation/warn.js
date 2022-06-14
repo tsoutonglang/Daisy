@@ -1,15 +1,14 @@
 module.exports = {
     name: 'warn',
     description: 'mutes member from talking',
-    execute(message, args, Discord, embedColor, ms){
-        // A&A admin || A&A mod
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+    execute(message, args, Discord, embedColor, ms, bbAdmin, bbMod, bbLog){
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod)){
             const target = message.mentions.members.first();
             
             if (target) {
                 const warning1 = message.guild.roles.cache.get('763407901456203856');
                 const warning2 = message.guild.roles.cache.get('763408119005970472');
-                const logChannel = message.guild.channels.cache.get('868197218258149396');
+                const logChannel = message.guild.channels.cache.get(bbLog);
                 var reason = " ";
 
                 if (!args[1]) {

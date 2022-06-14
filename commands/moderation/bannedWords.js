@@ -1,7 +1,7 @@
 module.exports = {
     name: 'bannedWords',
     description: "thou shall not speak these words",
-    execute(message, Discord, client, embedColor, ms) {
+    execute(message, Discord, client, embedColor, ms, bbGuild, bbLog) {
         let bannedWords = ['rape', 'rapist', 'raping', 'fag', 'faggot', 'chink', 'nigga', 'nigger', 'porn', 'pornography', 'retard', 'retarded', 'dyke', 'tranny'];
         if (message.channel.type === 'dm' || message.author.bot)
             return;
@@ -13,8 +13,8 @@ module.exports = {
                 foundInText = true;
         }
             
-        if (message.guild.id === '738238370488254534') { // A&A
-            const logChannel = client.channels.cache.get('868197218258149396')
+        if (message.guild.id === bbGuild) {
+            const logChannel = client.channels.cache.get(bbLog)
 
             if (foundInText) {
                 let logEmbed = new Discord.MessageEmbed()

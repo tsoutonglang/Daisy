@@ -1,9 +1,9 @@
 module.exports = {
     name: 'welcome',
     description: "welcome people into the server",
-    execute(guildMember, Discord, embedColor){
+    execute(guildMember, Discord, embedColor, bbGuild, daisyGuild){
         
-        if (guildMember.guild.id === '738238370488254534') { // A&A
+        if (guildMember.guild.id === bbGuild) {
             const channel = guildMember.guild.channels.cache.get('738306568675786803');
             const unverifiedRole = guildMember.guild.roles.cache.get('856596232175484929');
             const divider1Role =  guildMember.guild.roles.cache.get('853867187998687242');
@@ -23,13 +23,12 @@ module.exports = {
             guildMember.roles.add(divider1Role);
             guildMember.roles.add(divider2Role);
             channel.send(`<a:bee:858626567608729651> <@${guildMember.user.id}> <a:bee:858626567608729651>\n`, {embed: welcomeMsg});
-        } else if (guildMember.guild.id === '855168901267456060') { // Daisy
+        } else if (guildMember.guild.id === daisyGuild) {
             const channel = guildMember.guild.channels.cache.get('887923043945549854');
             const petalRole = guildMember.guild.roles.cache.get('859979053717127168');
             const welcomeMsg = new Discord.MessageEmbed()
                 .setColor(embedColor)
                 .setTitle("Welcome to Daisy's Garden!")
-                .setThumbnail('https://i.imgur.com/qilLXH7.gif')
                 .setImage('https://i.imgur.com/QEgHe3Y.gif')
                 .setFooter("Please enjoy your stay!", "https://i.imgur.com/PmRwT69.png");
             

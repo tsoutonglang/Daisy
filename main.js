@@ -7,6 +7,14 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 const prefix = 'd.'; // prefix to use commands
 const embedColor = '#f1f48b'; // color for any embeds
 
+const bbGuild = '738238370488254534';
+const bbAdmin = '738248181959229513';
+const bbMod = '739030988944048199';
+const bbLog = '868197218258149396';
+
+const daisyGuild = '855168901267456060';
+const daisyAdmin = '858950608933355530';
+
 // to get into other js files
 const path = require('path');
 const fs = require('fs');
@@ -48,11 +56,11 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', guildMember => {
-    client.commands.get('welcome').execute(guildMember, Discord, embedColor);
+    client.commands.get('welcome').execute(guildMember, Discord, embedColor, bbGuild, daisyGuild);
 });
 
 client.on('guildMemberRemove', guildMember => {
-    client.commands.get('exit').execute(guildMember, Discord);
+    client.commands.get('exit').execute(guildMember, Discord, embedColor, bbGuild, daisyGuild);
 });
 
 // commands
@@ -108,36 +116,34 @@ client.on('message', message => {
     // channels
     else if (command === 'reactionrole'){
         if (message.channel.id === '738288684725436516')
-            client.commands.get('bbreactionrole').execute(message, Discord, client, embedColor);
-        if (message.channel.id === '983217126418579486')
-            client.commands.get('moonreactionrole').execute(message, Discord, client, embedColor);
+            client.commands.get('bbreactionrole').execute(message, Discord, client, embedColor, bbGuild, bbAdmin);
     } else if (command == 'rules'){
-        client.commands.get('rules').execute(message);
+        client.commands.get('rules').execute(message, bbGuild, bbAdmin);
     } else if (command == 'information'){
-        client.commands.get('information').execute(message);
+        client.commands.get('information').execute(message, bbGuild, bbAdmin);
     }
 
     // moderation
     else if (command === 'clear'){
-        client.commands.get('clear').execute(message, args);
+        client.commands.get('clear').execute(message, args, bbAdmin, bbMod, daisyAdmin);
     } else if (command === 'kick'){
-        client.commands.get('kick').execute(message, Discord, embedColor, args);
+        client.commands.get('kick').execute(message, Discord, embedColor, args, bbAdmin, bbMod, bbLog);
     } else if (command === 'ban'){
-        client.commands.get('ban').execute(message, Discord, embedColor, args);
+        client.commands.get('ban').execute(message, Discord, embedColor, args, bbAdmin, bbMod, bbLog);
     } else if (command == 'mute'){
-        client.commands.get('mute').execute(message, args, Discord, embedColor, ms);
+        client.commands.get('mute').execute(message, args, Discord, embedColor, ms, bbAdmin, bbMod, bbLog);
     } else if (command == 'warn'){
-        client.commands.get('warn').execute(message, args, Discord, embedColor, ms);
+        client.commands.get('warn').execute(message, args, Discord, embedColor, bbAdmin, bbMod, bbLog);
     } else if (command == 'lockdown'){
-        client.commands.get('lockdown').execute(message, args);
+        client.commands.get('lockdown').execute(message, args, bbAdmin, bbMod);
     } else if (command == 'jail'){
-        client.commands.get('jail').execute(message, args, Discord, embedColor);
+        client.commands.get('jail').execute(message, args, Discord, embedColor, bbAdmin, bbMod, bbLog);
     }
 });
 
 // word filter
 client.on('message', async message =>{
-    client.commands.get('bannedWords').execute(message, Discord, client, embedColor, ms);
+    client.commands.get('bannedWords').execute(message, Discord, client, embedColor, ms, bbGuild, bbLog);
 });
 
 client.on('message', async message =>{

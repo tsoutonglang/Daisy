@@ -1,9 +1,8 @@
 module.exports = {
     name: 'lockdown',
     description: 'locks down the server if a raid happens',
-    async execute(message, args, Discord, embedColor, ms){
-        // A&A admin || A&A mod
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+    async execute(message, args, bbAdmin, bbMod){
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod)){
             const role = message.guild.roles.cache.get('738601010116689953');
 
             if (!args[0])

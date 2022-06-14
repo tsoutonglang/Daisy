@@ -1,9 +1,8 @@
 module.exports = {
     name: 'jail',
     description: 'gives members the jail time role',
-    execute(message, args, Discord, embedColor){
-        // A&A admin || A&A mod
-        if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
+    execute(message, args, Discord, embedColor, bbAdmin, bbMod, bbLog){
+        if (message.member.roles.cache.has(bbAdmin) || message.member.roles.cache.has(bbMod)){
             const target = message.mentions.members.first();
             const jailRole = message.guild.roles.cache.get('767479238243778561');
             const verifyRole = message.guild.roles.cache.get('738601010116689953');
@@ -16,7 +15,7 @@ module.exports = {
                     reason = args.splice(1).join(" ");
                 }
 
-                const logChannel = message.guild.channels.cache.get('868197218258149396');
+                const logChannel = message.guild.channels.cache.get(bbLog);
                 let jailEmbed = new Discord.MessageEmbed()
                     .setDescription(`<@${target.id}> was put in jail.`)
                     .addField("Reason", reason)

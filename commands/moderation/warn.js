@@ -2,6 +2,7 @@ module.exports = {
     name: 'warn',
     description: 'mutes member from talking',
     execute(message, args, Discord, embedColor, ms){
+        // A&A admin || A&A mod
         if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const target = message.mentions.members.first();
             

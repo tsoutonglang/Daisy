@@ -13,8 +13,7 @@ module.exports = {
                 foundInText = true;
         }
             
-        const baebee = '738238370488254534';
-        if (message.guild.id === baebee) {
+        if (message.guild.id === '738238370488254534') { // A&A
             const logChannel = client.channels.cache.get('868197218258149396')
 
             if (foundInText) {
@@ -80,18 +79,6 @@ module.exports = {
                     message.delete();
                 }
             }
-        }
-        else {
-            if (foundInText) {
-                let warnEmbed = new Discord.MessageEmbed()
-                    .setDescription(`That word is not allowed here <@${message.author.id}>!`)
-                    .setColor(embedColor)
-                    .setTimestamp();
-
-                message.channel.send(warnEmbed);
-                message.delete();
-            }
-                
         }
     }
 }

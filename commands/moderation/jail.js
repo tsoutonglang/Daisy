@@ -2,6 +2,7 @@ module.exports = {
     name: 'jail',
     description: 'gives members the jail time role',
     execute(message, args, Discord, embedColor){
+        // A&A admin || A&A mod
         if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const target = message.mentions.members.first();
             const jailRole = message.guild.roles.cache.get('767479238243778561');

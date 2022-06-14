@@ -2,6 +2,7 @@ module.exports = {
     name: 'ban',
     description: 'ban member from server',
     execute(message, Discord, embedColor, args){
+        // A&A admin || A&A mod
         if (message.member.roles.cache.has('738248181959229513') || message.member.roles.cache.has('739030988944048199')){
             const member = message.mentions.users.first();
             if (member) {

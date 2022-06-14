@@ -1,6 +1,12 @@
 <h1>Daisy</h1>
 <p>Daisy is a bot peronalized for the Anime & Artists Discord server! It's designed to have multiple purposes geared towards moderation and fun. The planned release date is July 29, 2021. Official release date is July 26, 2021.</p>
 <h2>Change Log</h2>
+<h3>June 14, 2022</h3>
+  <p>
+    <ul>
+      <li>JK. I'm rolling back to keeping Daisy for Anime & Artists just for simplicity's sake. I'll probably change Rin's functionality to be for The Moon instead of just being a corn bot. I'll keep Daisy's reaction commands available univerally still, but all moderation tools are just for A&A.</li>
+    </ul>
+  </p>
 <h3>June 5, 2022</h3>
   <p>
     <ul>
@@ -11,6 +17,7 @@
           <li>mod controls to be added soon</li>
         </ol>
     </ul>
+  </p>
 <h3>April 19, 2022</h3>
   <p>
     <ul>

@@ -164,12 +164,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.emoji.id === '738261600003424387'){
         client.commands.get('starboard').execute(reaction, Discord, client, embedColor);
     }
-
-    // verification
-    if (reaction.emoji.name === '🐝'){
-        client.commands.get('verification').execute(reaction, user, client);
-    }
-
+    
     // add event for reaction role msg so i don't have to redo it everytime the bot restarts
     if (reaction.message.channel.id === '738288684725436516'){
         client.commands.get('bbreactionroleadd').execute(reaction, user, client);

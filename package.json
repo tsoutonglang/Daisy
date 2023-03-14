@@ -7,5 +7,9 @@
     "test": "node src/index.js"
   },
   "author": "Tania Soutonglang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  }
 }

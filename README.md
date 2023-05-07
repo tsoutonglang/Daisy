@@ -12,12 +12,12 @@
             <li>set/remove welcome channel and message</li>
             <li>leave message</li>
             <li>ban and unban member</li>
+            <li>clear messages</li>
+            <li>check server info</li>
+            <li>kick member</li>
         </ul>
     <p>To do list:</p>
         <ul>
-            <li>check server info</li>
-            <li>purge messages</li>
-            <li>kick member</li>
             <li>meme command</li>
             <li>report</li>
             <li>8ball</li>

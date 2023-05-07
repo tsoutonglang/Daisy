@@ -19,7 +19,7 @@ module.exports = {
         const ID = users.id;
         const banUser = client.users.cache.get(ID)
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return await interaction.reply({ contetnt: "You don't have permission for this", ephemeral: true})
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return await interaction.reply({ contetnt: "You don't have permission for this, silly goose", ephemeral: true})
         if (interaction.member.id === ID) return await interaction.reply({ content: "You can't ban yourself, silly goose", ephemeral: true })
 
         let reason = interaction.options.getString('reason');
@@ -32,6 +32,7 @@ module.exports = {
         const embed = new EmbedBuilder()
         .setColor('#92a8d1')
         .setDescription(`${banUser.tag} has been banned | ${reason}`)
+        .setImage('https://i.imgur.com/vAQcsmb.gif')
 
         await interaction.guild.bans.create(banUser.id, {reason}).catch(err => {
             return interaction.reply({ content: "I can't ban this member!", ephemeral: true})

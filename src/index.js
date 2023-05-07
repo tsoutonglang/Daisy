@@ -52,9 +52,9 @@ client.on(Events.GuildMemberAdd, async (member) => {
         .setDescription(`<a:sideheart:858626585184043018> Read through <#738303555458433117> for access\n
             <a:sideheart:858626585184043018> Introduce yourself in <#738248600345116734>\n
             <a:sideheart:858626585184043018> Get some roles in <#738288684725436516>`)
-        .setImage('https://i.imgur.com/QEgHe3Y.gif')
+        .setImage('https://i.imgur.com/dbtyVJu.gif')
         .setTimestamp()
-        .setThumbnail('https://i.imgur.com/qilLXH7.gif')
+        .setThumbnail('https://i.imgur.com/6Z6Cg5t.gif')
 
     if (channelID == null) return;
 
@@ -69,7 +69,7 @@ client.on(Events.GuildMemberRemove, async (member) => {
         .setColor('#f7cac9')
         .setTitle("See you later!")
         .setDescription(`${member} left the bee hive!`)
-        .setImage('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2RiZGQ3MTZhZWM5YWNmNDNiNjYzOWViNGNhNGRmNDEzYzhmOWM5MiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Uz4cDaGXPxeuY/giphy.gif')
+        .setImage('https://i.imgur.com/zDbxpc5.gif')
         .setTimestamp()
 
     if (channelID == null) return;

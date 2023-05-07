@@ -30,7 +30,7 @@ module.exports = {
         )
 
         const embed = new EmbedBuilder()
-        .setColor('#92a8d1')
+        .setColor('#f7cac9')
         .setAuthor({ name: name, iconURL: icon })
         .setThumbnail(`${icon}`)
         .setFooter({ text: "Bot ID: 738179161960611960"})

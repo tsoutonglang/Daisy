@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "dependencies": {
+    "better-sqlite3": "^8.3.0",
     "busboy": "^1.6.0",
     "discord-api-types": "^0.37.41",
     "discord.js": "^14.11.0",
@@ -16,6 +17,7 @@
     "lodash": "^4.17.21",
     "lodash.snakecase": "^4.1.1",
     "peek-readable": "^5.0.0",
+    "quick.db": "^9.1.6",
     "readable-stream": "^3.6.2",
     "readable-web-to-node-stream": "^3.0.2",
     "safe-buffer": "^5.2.1",
